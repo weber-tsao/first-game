@@ -4,13 +4,16 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class playercontroll : MonoBehaviour
-{   //public RigidBody2D player;
+{   public RigidBody2D player;
     public float speed = 0.01f;
+    public float mousePositionX;
+    public float mousePositionY;
+    public float mousePositionZ;
 
     // Start is called before the first frame update
     void Start()
     {
-        //player = getComponent<RigidBody2D>();
+        player = getComponent<RigidBody2D>();
     }
 
     // Update is called once per frame
@@ -38,7 +41,22 @@ public class playercontroll : MonoBehaviour
 
     void OnMouseDown()
     {
-        print("working");
-        gameObject.transform.position -= new Vector3(0, 0.5f, 0);
+        print("click");
+        print(Input.mousePosition.x);
+        print(Input.mousePosition.y);
+        print(Input.mousePosition.z);
+        mousePositionX = Input.mousePosition.x;
+        mousePositionY = Input.mousePosition.y;
+        mousePositionZ = Input.mousePosition.z;
+    }
+    
+    void OnMouseUp()
+    {
+        print("drag");
+        print(Input.mousePosition.x);
+        print(Input.mousePosition.y);
+        print(Input.mousePosition.z);
+        print("value from click: " + mousePositionX);
+        gameObject.transform.position += new Vector3();
     }
 }
