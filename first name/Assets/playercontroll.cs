@@ -4,11 +4,15 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class playercontroll : MonoBehaviour
+
 {   public RigidBody2D player;
+
+{   //public RigidBody2D player;
     public float speed = 0.01f;
     public float mousePositionX;
     public float mousePositionY;
     public float mousePositionZ;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,7 @@ public class playercontroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //gameObject.transform.position += new Vector3(speed, 0, 0);
         
         if (Input.GetKey(KeyCode.RightArrow))
@@ -38,6 +43,8 @@ public class playercontroll : MonoBehaviour
             gameObject.transform.position -= new Vector3(0, speed, 0);
         }
     }
+
+    
 
     void OnMouseDown()
     {
