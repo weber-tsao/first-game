@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class playercontroll : MonoBehaviour
 
-{   public RigidBody2D player;
-
-{   //public RigidBody2D player;
+{  
+    public Rigidbody2D player;  
     public float speed = 0.01f;
     public float mousePositionX;
     public float mousePositionY;
@@ -17,7 +16,7 @@ public class playercontroll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = getComponent<RigidBody2D>();
+        player = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -64,6 +63,6 @@ public class playercontroll : MonoBehaviour
         print(Input.mousePosition.y);
         print(Input.mousePosition.z);
         print("value from click: " + mousePositionX);
-        gameObject.transform.position += new Vector3();
+        player.velocity = new Vector2((mousePositionX-Input.mousePosition.x)/10, (mousePositionY-Input.mousePosition.y)/10);
     }
 }
