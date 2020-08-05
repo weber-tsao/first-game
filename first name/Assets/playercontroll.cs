@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class playercontroll : MonoBehaviour
 
 {  
     public Rigidbody2D player;  
-    public float speed = 0.01f;
+    public float speed = 0.0001f;
     public float mousePositionX;
     public float mousePositionY;
     public float mousePositionZ;
+    float speedx, speedy;
 
 
     // Start is called before the first frame update
@@ -22,25 +25,16 @@ public class playercontroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //gameObject.transform.position += new Vector3(speed, 0, 0);
-        
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            gameObject.transform.position += new Vector3(speed, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            gameObject.transform.position -= new Vector3(speed, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            gameObject.transform.position += new Vector3(0, speed, 0);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            gameObject.transform.position -= new Vector3(0, speed, 0);
-        }
+        speedx = player.velocity.x*0.01f;
+        speedy = player.velocity.y*0.01f;
+        player.velocity = player.velocity * (1-speed);
+       
+        //playerVector.set(speedx * 0.01f, speedy * 0.01f);
+       
+        print("velocity x " + player.velocity.x);
+        print("velocity y " + player.velocity.y);
+        //print("speed x " + speedx);
+        //print("speed y " + speedy);
     }
 
     
@@ -55,7 +49,7 @@ public class playercontroll : MonoBehaviour
         mousePositionY = Input.mousePosition.y;
         mousePositionZ = Input.mousePosition.z;
     }
-    
+
     void OnMouseUp()
     {
         print("drag");
@@ -63,6 +57,9 @@ public class playercontroll : MonoBehaviour
         print(Input.mousePosition.y);
         print(Input.mousePosition.z);
         print("value from click: " + mousePositionX);
-        player.velocity = new Vector2((mousePositionX-Input.mousePosition.x)/10, (mousePositionY-Input.mousePosition.y)/10);
+        
+        player.velocity = new Vector2((mousePositionX - Input.mousePosition.x) / 10 , (mousePositionY - Input.mousePosition.y) / 10);
+        
+
     }
 }
