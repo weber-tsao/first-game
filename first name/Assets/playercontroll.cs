@@ -3,18 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class playercontroll : MonoBehaviour
 
 {  
     public Rigidbody2D player;  
-    public float speed = 1f;
-    public float downspeed = 0.001f;
+
+    public float speed = 0.0001f;
     public float mousePositionX;
     public float mousePositionY;
     public float mousePositionZ;
-    public Boolean flag = false;
+    float speedx, speedy;
 
 
 
@@ -27,16 +28,18 @@ public class playercontroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //gameObject.transform.position += new Vector3(speed, 0, 0);
-        if (flag == true)
-        {
-            player.velocity = player.velocity * speed;
-            speed -= downspeed;
-            if(speed <= 0)
-            {
-                speed = 0;
-            }
-        }
+
+        speedx = player.velocity.x*0.01f;
+        speedy = player.velocity.y*0.01f;
+        player.velocity = player.velocity * (1-speed);
+       
+        //playerVector.set(speedx * 0.01f, speedy * 0.01f);
+       
+        print("velocity x " + player.velocity.x);
+        print("velocity y " + player.velocity.y);
+        //print("speed x " + speedx);
+        //print("speed y " + speedy);
+
     }
 
     
@@ -51,15 +54,20 @@ public class playercontroll : MonoBehaviour
         mousePositionY = Input.mousePosition.y;
         mousePositionZ = Input.mousePosition.z;
     }
-    
-    void OnMouseUp() //放開
+
+    void OnMouseUp()
+
     {
         print("drag");
         print(Input.mousePosition.x);
         print(Input.mousePosition.y);
         print(Input.mousePosition.z);
         print("value from click: " + mousePositionX);
-        player.velocity = new Vector2((mousePositionX-Input.mousePosition.x)/10, (mousePositionY-Input.mousePosition.y)/10);
-        flag = true;
+
+        
+        player.velocity = new Vector2((mousePositionX - Input.mousePosition.x) / 10 , (mousePositionY - Input.mousePosition.y) / 10);
+        
+
+
     }
 }
