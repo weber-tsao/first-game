@@ -31,8 +31,8 @@ public class playercontroll : MonoBehaviour
        
         //playerVector.set(speedx * 0.01f, speedy * 0.01f);
        
-        print("velocity x " + player.velocity.x);
-        print("velocity y " + player.velocity.y);
+        //print("velocity x " + player.velocity.x);
+        //print("velocity y " + player.velocity.y);
         //print("speed x " + speedx);
         //print("speed y " + speedy);
     }
@@ -41,10 +41,10 @@ public class playercontroll : MonoBehaviour
 
     void OnMouseDown()
     {
-        print("click");
-        print(Input.mousePosition.x);
-        print(Input.mousePosition.y);
-        print(Input.mousePosition.z);
+        //print("click");
+        //print(Input.mousePosition.x);
+        //print(Input.mousePosition.y);
+        //print(Input.mousePosition.z);
         mousePositionX = Input.mousePosition.x;
         mousePositionY = Input.mousePosition.y;
         mousePositionZ = Input.mousePosition.z;
@@ -52,11 +52,11 @@ public class playercontroll : MonoBehaviour
 
     void OnMouseUp()
     {
-        print("drag");
-        print(Input.mousePosition.x);
-        print(Input.mousePosition.y);
-        print(Input.mousePosition.z);
-        print("value from click: " + mousePositionX);
+        //print("drag");
+        //print(Input.mousePosition.x);
+        //print(Input.mousePosition.y);
+        //print(Input.mousePosition.z);
+        //print("value from click: " + mousePositionX);
         
         player.velocity = new Vector2((mousePositionX - Input.mousePosition.x) / 10 , (mousePositionY - Input.mousePosition.y) / 10);
         
