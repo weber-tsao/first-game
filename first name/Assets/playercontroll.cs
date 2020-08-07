@@ -16,9 +16,15 @@ public class playercontroll : MonoBehaviour
     public float mousePositionY;
     public float mousePositionZ;
     float speedx, speedy;
-
-
-
+    int attackPower = 20000;
+    void SetAttackPower(int x)
+    {
+        attackPower = x;
+    }
+    int GetAttackPower()
+    {
+        return attackPower;
+    }
     // Start is called before the first frame update
     void Start()
     {
