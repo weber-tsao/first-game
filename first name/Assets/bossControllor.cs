@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -69,17 +70,16 @@ public class bossControllor : MonoBehaviour
     public void OnCollisionEnter2D()
     {
         
-        //print("collide"); //碰到碰撞器時印出"A"
-        //Destroy(this.gameObject);
+        print("collide"); 
 
     }
 
-    public void hunt(GameObject boss, int blood, int attack)
+    public void hunt(GameObject boss, int Blood1, int attack)
     {
-        print("hunt");
-        blood -= attack;
+        //print("hunt");
+        Blood1 -= attack;
         
-        if (blood <= 0)
+        if (Blood1 <= 0)
         {
             Destroy(boss);
         }
