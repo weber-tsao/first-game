@@ -6,13 +6,13 @@ using UnityEngine;
 public class bossControllor : MonoBehaviour
 {
     public Rigidbody2D boss;
-    public int blood = 10;
-    public float speed = 0.01f;
-    int attackPower = 10;
-    int defense = 0;
-    int mode = 0;
-    int debuff = 0;
-    int bossAttack=0;
+    public int blood;
+    public float speed;
+    int attackPower;
+    int defense;
+    int mode;
+    int debuff;
+    int bossAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class bossControllor : MonoBehaviour
             //gameObject.transform.position -= new Vector3(speed, -speed, 0);
             //print("fuck you" + Screen.width);
     }
+
     public bossControllor(int Blood1,int Defense1,int Atttack1,float Speed1,int Mode1,int Debuff1)
     {
         blood = Blood1;
@@ -37,27 +38,51 @@ public class bossControllor : MonoBehaviour
         debuff = Debuff1;
 
     }
-    void Hunt(int attack)
+
+    public void Hunt(int attack)
     {
 
         blood -= attack;
-        print(attack);
-        print(blood);
+       // print(attack);
+       // print(blood);
         if (blood <= 0)
         {
             Destroy(this.gameObject);
         }
     }
-    void SetAttackPower(int x)
+
+    public void SetAttackPower(int x)
     {
         attackPower = x;
     }
-    
-    void OnCollisionEnter2D()
+
+    public int getBlood()
     {
-        Hunt(attackPower);
+        return blood;
+    }
+
+    public int getAttack()
+    {
+        return attackPower;
+    }
+
+    public void OnCollisionEnter2D()
+    {
+        
         //print("collide"); //碰到碰撞器時印出"A"
         //Destroy(this.gameObject);
 
+    }
+
+    public void hunt(GameObject boss, int blood, int attack)
+    {
+        print("hunt");
+        blood -= attack;
+        
+        if (blood <= 0)
+        {
+            Destroy(boss);
+        }
+       
     }
 }
