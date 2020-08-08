@@ -10,6 +10,7 @@ using UnityEngine;
 public class playercontroll : MonoBehaviour
 
 {  
+    // field
     public Rigidbody2D player;  
     public float speed = 0.0001f;
     public float mousePositionX;
@@ -39,40 +40,34 @@ public class playercontroll : MonoBehaviour
     { 
         speedx = player.velocity.x*0.01f;
         speedy = player.velocity.y*0.01f;
-        player.velocity = player.velocity * (1-speed);
+        player.velocity = player.velocity * (1-speed);// to slow down
     }
 
-    void OnMouseDown() //點下
+    // mouse click
+    void OnMouseDown() 
     {
-        //print("click");
-        //print(Input.mousePosition.x);
-        //print(Input.mousePosition.y);
-        //print(Input.mousePosition.z);
         mousePositionX = Input.mousePosition.x;
         mousePositionY = Input.mousePosition.y;
         mousePositionZ = Input.mousePosition.z;
     }
 
+    // mouse unclick
     void OnMouseUp()
 
     {
-        //print("drag");
-        //print(Input.mousePosition.x);
-        //print(Input.mousePosition.y);
-        //print(Input.mousePosition.z);
-        //print("value from click: " + mousePositionX);
         player.velocity = new Vector2((mousePositionX - Input.mousePosition.x) / 10 , (mousePositionY - Input.mousePosition.y) / 10);
     }
 
+    // collided event
     public void OnCollisionEnter2D(Collision2D collision)
     {
         print(collision.gameObject.name);
         GameObject collideObject = collision.gameObject;
-        bossHealth healthOfBoss = collideObject.GetComponent<bossHealth>();
+        bossHealth healthOfBoss = collideObject.GetComponent<bossHealth>();// create bossHealth object
         
         if (collision.gameObject.name == "boss") 
         { 
-            healthOfBoss.TakeDamage(1, collideObject);
+            healthOfBoss.TakeDamage(1, collideObject);// call the function of damaging
         }
     }
 }

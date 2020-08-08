@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class bossControllor : MonoBehaviour
 {
+    // field
     public Rigidbody2D boss;
     public int blood;
     public float speed;
@@ -14,7 +15,17 @@ public class bossControllor : MonoBehaviour
     int mode;
     int debuff;
     int bossAttack;
-    
+
+    // constructor
+    public bossControllor(int Blood1, int Defense1, int Atttack1, float Speed1, int Mode1, int Debuff1)
+    {
+        blood = Blood1;
+        defense = Defense1;
+        bossAttack = Atttack1;
+        speed = Speed1;
+        mode = Mode1;
+        debuff = Debuff1;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,17 +38,6 @@ public class bossControllor : MonoBehaviour
     void Update()
     {
        
-    }
-
-    public bossControllor(int Blood1,int Defense1,int Atttack1,float Speed1,int Mode1,int Debuff1)
-    {
-        blood = Blood1;
-        defense = Defense1;
-        bossAttack = Atttack1;
-        speed = Speed1;
-        mode = Mode1;
-        debuff = Debuff1;
-
     }
 
     public void SetAttackPower(int x)
@@ -58,26 +58,9 @@ public class bossControllor : MonoBehaviour
     /*public void OnCollisionEnter2D(Collision2D collision)
     {
 
-        GameObject boss1 = collision.gameObject;
-        bossHealth health = boss1.GetComponent<bossHealth>();
-        if (health != null)
-        {
-            health.TakeDamage(1);
-        }
-
-        Destroy(gameObject);
     }*/
 
-    public void hunt(GameObject boss, int Blood1, int attack)
-    {
-        //print("hunt");
-        Blood1 -= attack;
-
-        if (Blood1 <= 0)
-        {
-            Destroy(boss);
-        }
-    }
+    
 }
 
     

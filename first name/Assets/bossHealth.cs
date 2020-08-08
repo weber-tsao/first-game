@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class bossHealth : MonoBehaviour
 {
+    // field
     public const int maxHealth = 2;
     public int currentHealth = maxHealth;
 
+    // damage the object and destroy it when health reached 0
     public void TakeDamage(int attackPower, GameObject gameObject)
     {
-        print("take damage");
+        print("boss take damage");
         currentHealth -= attackPower;
+
         if (currentHealth <= 0)
         {
             currentHealth = 0;
