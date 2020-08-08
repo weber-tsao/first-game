@@ -12,13 +12,13 @@ public class bossHealth : MonoBehaviour
     public void TakeDamage(int attackPower, GameObject gameObject)
     {
         print("boss take damage");
-        currentHealth -= attackPower;
+        currentHealth -= attackPower;// damage the object
 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             Destroy(gameObject);
-            print("dead");
+            print("boss dead");
         }
     }
 }

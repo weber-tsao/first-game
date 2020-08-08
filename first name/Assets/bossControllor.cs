@@ -31,7 +31,6 @@ public class bossControllor : MonoBehaviour
     void Start()
     {
         boss = GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
@@ -55,10 +54,10 @@ public class bossControllor : MonoBehaviour
         return attackPower;
     }
 
-    /*public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
 
-    }*/
+    }
 
     
 }

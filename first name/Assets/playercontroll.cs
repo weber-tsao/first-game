@@ -19,16 +19,6 @@ public class playercontroll : MonoBehaviour
     float speedx, speedy;
     int attackPower = 20000;
 
-    void SetAttackPower(int x)
-    {
-        attackPower = x;
-    }
-
-    int GetAttackPower()
-    {
-        return attackPower;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +33,7 @@ public class playercontroll : MonoBehaviour
         player.velocity = player.velocity * (1-speed);// to slow down
     }
 
-    // mouse click
+    // mouse onclick
     void OnMouseDown() 
     {
         mousePositionX = Input.mousePosition.x;
@@ -53,12 +43,11 @@ public class playercontroll : MonoBehaviour
 
     // mouse unclick
     void OnMouseUp()
-
     {
         player.velocity = new Vector2((mousePositionX - Input.mousePosition.x) / 10 , (mousePositionY - Input.mousePosition.y) / 10);
     }
 
-    // collided event
+    // collide event
     public void OnCollisionEnter2D(Collision2D collision)
     {
         print(collision.gameObject.name);
@@ -70,4 +59,16 @@ public class playercontroll : MonoBehaviour
             healthOfBoss.TakeDamage(1, collideObject);// call the function of damaging
         }
     }
+
+    // currently no use
+    /*
+    void SetAttackPower(int x)
+    {
+        attackPower = x;
+    }
+
+    int GetAttackPower()
+    {
+        return attackPower;
+    }*/
 }
