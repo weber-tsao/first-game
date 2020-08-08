@@ -16,8 +16,8 @@ public class playercontroll : MonoBehaviour
     public float mousePositionX;
     public float mousePositionY;
     public float mousePositionZ;
-    float speedx, speedy;
-    int attackPower = 20000;
+    public float speedx, speedy;
+    public int attackPower = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -56,19 +56,18 @@ public class playercontroll : MonoBehaviour
         
         if (collision.gameObject.name == "boss") 
         { 
-            healthOfBoss.TakeDamage(1, collideObject);// call the function of damaging
+            healthOfBoss.TakeDamage(attackPower, collideObject);// call the function of damaging
         }
     }
 
-    // currently no use
-    /*
-    void SetAttackPower(int x)
+    // set player attack power
+    void SetAttackPower(int attack)
     {
-        attackPower = x;
+        attackPower = attack;
     }
 
     int GetAttackPower()
     {
         return attackPower;
-    }*/
+    }
 }
