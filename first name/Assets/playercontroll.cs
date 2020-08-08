@@ -15,6 +15,7 @@ public class playercontroll : MonoBehaviour
     public float mousePositionX;
     public float mousePositionY;
     public float mousePositionZ;
+    int AttackPower = 1;
     float speedx, speedy;
 
 
@@ -42,8 +43,15 @@ public class playercontroll : MonoBehaviour
 
     }
 
-    
+    void SetAttackPower(int x)
+    {
+        AttackPower = x;
+    }
 
+    int GetAttackPower()
+    {
+        return AttackPower;
+    }
     void OnMouseDown() //點下
     {
         //print("click");

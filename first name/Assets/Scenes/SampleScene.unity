@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 0}
-  blood: 20000
+  blood: 10
   speed: 0.01
 --- !u!1 &1555370689
 GameObject:
