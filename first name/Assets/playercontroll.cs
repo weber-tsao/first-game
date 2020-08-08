@@ -11,7 +11,6 @@ public class playercontroll : MonoBehaviour
 
 {  
     public Rigidbody2D player;  
-
     public float speed = 0.0001f;
     public float mousePositionX;
     public float mousePositionY;
@@ -23,10 +22,12 @@ public class playercontroll : MonoBehaviour
     {
         attackPower = x;
     }
+
     int GetAttackPower()
     {
         return attackPower;
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,22 +36,11 @@ public class playercontroll : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-
+    { 
         speedx = player.velocity.x*0.01f;
         speedy = player.velocity.y*0.01f;
         player.velocity = player.velocity * (1-speed);
-       
-        //playerVector.set(speedx * 0.01f, speedy * 0.01f);
-       
-        //print("velocity x " + player.velocity.x);
-        //print("velocity y " + player.velocity.y);
-        //print("speed x " + speedx);
-        //print("speed y " + speedy);
-
     }
-
-    
 
     void OnMouseDown() //點下
     {
@@ -66,7 +56,6 @@ public class playercontroll : MonoBehaviour
     void OnMouseUp()
 
     {
-
         //print("drag");
         //print(Input.mousePosition.x);
         //print(Input.mousePosition.y);
@@ -77,14 +66,12 @@ public class playercontroll : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-
-        GameObject boss = collision.gameObject;// use tag!!!!!
-        bossHealth health = boss.GetComponent<bossHealth>();
-        if (health != null)
-        {
-            health.TakeDamage(1);
+        print(collision.gameObject.name);
+        GameObject boss = collision.gameObject;
+        bossHealth healthOfBoss = boss.GetComponent<bossHealth>();
+        if (collision.gameObject.name == "boss") 
+        { 
+            healthOfBoss.TakeDamage(1, boss);
         }
-
-        //Destroy(boss);
     }
 }
