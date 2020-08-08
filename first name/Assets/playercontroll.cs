@@ -67,11 +67,12 @@ public class playercontroll : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         print(collision.gameObject.name);
-        GameObject boss = collision.gameObject;
-        bossHealth healthOfBoss = boss.GetComponent<bossHealth>();
+        GameObject collideObject = collision.gameObject;
+        bossHealth healthOfBoss = collideObject.GetComponent<bossHealth>();
+        
         if (collision.gameObject.name == "boss") 
         { 
-            healthOfBoss.TakeDamage(1, boss);
+            healthOfBoss.TakeDamage(1, collideObject);
         }
     }
 }
