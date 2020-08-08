@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 861160511}
   m_Layer: 0
   m_Name: boss
-  m_TagString: Untagged
+  m_TagString: boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -621,6 +621,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss1: {fileID: 0}
   bossObject: {fileID: 861160506}
+  bossBlood: 0
+  attack: 0
 --- !u!1 &1580079021
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +695,7 @@ GameObject:
   - component: {fileID: 1632707117}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

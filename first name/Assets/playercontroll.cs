@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using UnityEngine;
 
+
 public class playercontroll : MonoBehaviour
 
 {  
@@ -17,6 +18,7 @@ public class playercontroll : MonoBehaviour
     public float mousePositionZ;
     float speedx, speedy;
     int attackPower = 20000;
+
     void SetAttackPower(int x)
     {
         attackPower = x;
@@ -70,11 +72,19 @@ public class playercontroll : MonoBehaviour
         //print(Input.mousePosition.y);
         //print(Input.mousePosition.z);
         //print("value from click: " + mousePositionX);
-
-        
         player.velocity = new Vector2((mousePositionX - Input.mousePosition.x) / 10 , (mousePositionY - Input.mousePosition.y) / 10);
-        
+    }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
 
+        GameObject boss = collision.gameObject;// use tag!!!!!
+        bossHealth health = boss.GetComponent<bossHealth>();
+        if (health != null)
+        {
+            health.TakeDamage(1);
+        }
+
+        //Destroy(boss);
     }
 }

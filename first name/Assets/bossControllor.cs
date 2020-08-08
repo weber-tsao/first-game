@@ -14,19 +14,19 @@ public class bossControllor : MonoBehaviour
     int mode;
     int debuff;
     int bossAttack;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         boss = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
        
-            //gameObject.transform.position -= new Vector3(speed, -speed, 0);
-            //print("fuck you" + Screen.width);
     }
 
     public bossControllor(int Blood1,int Defense1,int Atttack1,float Speed1,int Mode1,int Debuff1)
@@ -38,18 +38,6 @@ public class bossControllor : MonoBehaviour
         mode = Mode1;
         debuff = Debuff1;
 
-    }
-
-    public void Hunt(int attack)
-    {
-
-        blood -= attack;
-       // print(attack);
-       // print(blood);
-        if (blood <= 0)
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     public void SetAttackPower(int x)
@@ -67,22 +55,30 @@ public class bossControllor : MonoBehaviour
         return attackPower;
     }
 
-    public void OnCollisionEnter2D()
+    /*public void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        print("collide"); 
 
-    }
+        GameObject boss1 = collision.gameObject;
+        bossHealth health = boss1.GetComponent<bossHealth>();
+        if (health != null)
+        {
+            health.TakeDamage(1);
+        }
+
+        Destroy(gameObject);
+    }*/
 
     public void hunt(GameObject boss, int Blood1, int attack)
     {
         //print("hunt");
         Blood1 -= attack;
-        
+
         if (Blood1 <= 0)
         {
             Destroy(boss);
         }
-       
     }
 }
+
+    
+

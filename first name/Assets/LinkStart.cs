@@ -19,24 +19,28 @@ public class LinkStart : MonoBehaviour
         boss1.SetAttackPower(1);
         bossBlood = boss1.getBlood();
         attack = boss1.getAttack();
-
     }
 
     // Update is called once per frame
     void Update()
     {
         //boss1.hunt(bossObject, bossBlood, attack);
-        //print("adfa"+bossBlood);
         //print("adfa" + attack);
         //boss1.OnCollisionEnter2D();
-        boss1.hunt(bossObject, bossBlood, attack);
     }
 
     public void OnCollisionEnter2D()
     {
         //boss1.hunt(bossObject, bossBlood, attack);
-        //print("destroy");
+        print("destroy");
         //Destroy(bossObject);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+       
+    }
+
+
 
 }
