@@ -18,6 +18,7 @@ public class bossControllor : MonoBehaviour
     void Start()
     {
         boss = GetComponent<Rigidbody2D>();
+        SetAttackPower(5);
     }
 
     // Update is called once per frame
@@ -48,7 +49,7 @@ public class bossControllor : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    void SetAttackPower(int x)
+    public void SetAttackPower(int x)
     {
         attackPower = x;
     }
