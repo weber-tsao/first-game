@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bossHealth : MonoBehaviour
 {
     // field
     public const int maxHealth = 2;
     public int currentHealth = maxHealth;
+    public RectTransform healthBar;
+
 
     // damage the object and destroy it when health reached 0
     public void TakeDamage(int attackPower, GameObject gameObject)
@@ -20,5 +23,6 @@ public class bossHealth : MonoBehaviour
             Destroy(gameObject);
             print("boss dead");
         }
+        healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
     }
 }
