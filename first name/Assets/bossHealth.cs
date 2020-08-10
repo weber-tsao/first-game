@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class bossHealth : MonoBehaviour
 {
     // field
-    public const int maxHealth = 3;
+    public const int maxHealth = 20;
     public int currentHealth = maxHealth;
     public healthBar healthbar;
 
