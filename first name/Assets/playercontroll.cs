@@ -25,7 +25,6 @@ public class playercontroll : MonoBehaviour
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
@@ -34,11 +33,6 @@ public class playercontroll : MonoBehaviour
         speedx = player.velocity.x*0.01f;
         speedy = player.velocity.y*0.01f;
         player.velocity = player.velocity * (1-speed);// to slow down
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            healthbar.setHealth(1);
-        }
     }
 
     // mouse onclick
@@ -64,9 +58,9 @@ public class playercontroll : MonoBehaviour
         
         if (collision.gameObject.name == "boss") 
         {
-            print(healthOfBoss.getCurrentHp());
+            print("Boss Hp: " + healthOfBoss.getCurrentHp());
             healthOfBoss.TakeDamage(attackPower, collideObject);// call the function of damaging
-            healthbar.setHealth(healthOfBoss.getCurrentHp());
+            healthbar.setHealth(healthOfBoss.getCurrentHp());// set health bar to the value of current boss hp
         }
     }
 
@@ -76,6 +70,7 @@ public class playercontroll : MonoBehaviour
         attackPower = attack;
     }
 
+    // get attack power
     int GetAttackPower()
     {
         return attackPower;

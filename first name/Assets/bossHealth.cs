@@ -8,18 +8,12 @@ public class bossHealth : MonoBehaviour
     // field
     public const int maxHealth = 20;
     public int currentHealth = maxHealth;
-    public healthBar healthbar;
-
-    void Start()
-    {
-    }
 
     // damage the object and destroy it when health reached 0
     public void TakeDamage(int attackPower, GameObject gameObject)
     {
-        print("boss take damage");
+        print("boss take damage of " + attackPower);
         currentHealth -= attackPower;// damage the object
-        healthbar.setHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
