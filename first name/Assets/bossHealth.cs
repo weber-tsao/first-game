@@ -13,7 +13,7 @@ public class bossHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthbar.setMaxHealth(maxHealth);
+        healthbar.setMaxHealth(maxHealth);// set health bar to max hp 
     }
 
     // damage the object and destroy it when health reached 0

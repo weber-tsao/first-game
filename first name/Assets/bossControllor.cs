@@ -9,7 +9,6 @@ public class bossControllor : MonoBehaviour
 {
     // field
     public Rigidbody2D boss;
-    public int blood;
     public float speed;
     int attackPower;
     int defense;
@@ -18,9 +17,8 @@ public class bossControllor : MonoBehaviour
     int bossAttack;
 
     // constructor
-    public bossControllor(int Blood1, int Defense1, int Atttack1, float Speed1, int Mode1, int Debuff1)
+    public bossControllor(int Defense1, int Atttack1, float Speed1, int Mode1, int Debuff1)
     {
-        blood = Blood1;
         defense = Defense1;
         bossAttack = Atttack1;
         speed = Speed1;
@@ -43,11 +41,6 @@ public class bossControllor : MonoBehaviour
     public void SetAttackPower(int x)
     {
         attackPower = x;
-    }
-
-    public int getBlood()
-    {
-        return blood;
     }
 
     public int getAttack()
