@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class healthBar : MonoBehaviour
 {
-    Vector3 localScale;
+    public Slider slider;
 
-    // Start is called before the first frame update
-    void Start()
+    public void setHealth(int hp)
     {
-        localScale = transform.localScale;
-
+        slider.value = hp;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        localScale.x = bossHealth.currentHealth;
-        transform.localScale = localScale;
-    }
+    //public void setMaxHealth(int hp)
+    //{
+        //slider.maxValue = hp;
+        //slider.value = hp;
+    //}
 }

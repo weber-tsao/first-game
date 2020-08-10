@@ -7,15 +7,20 @@ public class bossHealth : MonoBehaviour
 {
     // field
     public const int maxHealth = 3;
-    public static int currentHealth = maxHealth;
-    //public RectTransform healthBar;
+    public int currentHealth = maxHealth;
+    //public healthBar healthbar;
 
+    void Start()
+    {
+        //healthbar.setMaxHealth(maxHealth);
+    }
 
     // damage the object and destroy it when health reached 0
     public void TakeDamage(int attackPower, GameObject gameObject)
     {
         print("boss take damage");
         currentHealth -= attackPower;// damage the object
+        //healthbar.setHealth(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -23,6 +28,5 @@ public class bossHealth : MonoBehaviour
             Destroy(gameObject);
             print("boss dead");
         }
-        //healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
     }
 }
