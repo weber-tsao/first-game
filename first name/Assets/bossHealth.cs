@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class bossHealth : MonoBehaviour
 {
     // field
-    public const int maxHealth = 2;
-    public int currentHealth = maxHealth;
-    public RectTransform healthBar;
+    public const int maxHealth = 3;
+    public static int currentHealth = maxHealth;
+    //public RectTransform healthBar;
 
 
     // damage the object and destroy it when health reached 0
@@ -23,6 +23,6 @@ public class bossHealth : MonoBehaviour
             Destroy(gameObject);
             print("boss dead");
         }
-        healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
+        //healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
     }
 }
