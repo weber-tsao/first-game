@@ -30,6 +30,7 @@ public class bossHealth : MonoBehaviour
         }
     }
 
+    // get current hp
     public int getCurrentHp()
     {
         return currentHealth;
