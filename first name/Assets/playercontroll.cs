@@ -19,7 +19,7 @@ public class playercontroll : MonoBehaviour
     public float mousePositionZ;
     public float speedx, speedy;
     public int attackPower = 1;
-    //public healthBar healthbar;
+    public healthBar healthbar;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,11 @@ public class playercontroll : MonoBehaviour
         speedx = player.velocity.x*0.01f;
         speedy = player.velocity.y*0.01f;
         player.velocity = player.velocity * (1-speed);// to slow down
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            healthbar.setHealth(1);
+        }
     }
 
     // mouse onclick
@@ -51,19 +56,19 @@ public class playercontroll : MonoBehaviour
     }
 
     // collide event
-    /*public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        print(collision.gameObject.name);
+        //print(collision.gameObject.name);
         GameObject collideObject = collision.gameObject;
         bossHealth healthOfBoss = collideObject.GetComponent<bossHealth>();// create bossHealth object
-        //print(bossHealth.currentHealth);
-
+        
         if (collision.gameObject.name == "boss") 
-        { 
+        {
+            print(healthOfBoss.getCurrentHp());
             healthOfBoss.TakeDamage(attackPower, collideObject);// call the function of damaging
-            //healthbar.setHealth(bossHealth.currentHealth);
+            healthbar.setHealth(healthOfBoss.getCurrentHp());
         }
-    }*/
+    }
 
     // set player attack power
     void SetAttackPower(int attack)

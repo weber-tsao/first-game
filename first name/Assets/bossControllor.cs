@@ -56,20 +56,19 @@ public class bossControllor : MonoBehaviour
         return attackPower;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    /*public void OnCollisionEnter2D(Collision2D collision)
     {
         print(collision.gameObject.name);
         GameObject collideObject = collision.gameObject;
         bossHealth healthOfBoss = collideObject.GetComponent<bossHealth>();// create bossHealth object
-        //print(healthOfBoss.getCurrentHp());
 
         if (collision.gameObject.name == "player")
         {
             print(healthOfBoss.getCurrentHp());
             healthOfBoss.TakeDamage(1, this.gameObject);// call the function of damaging
-            //healthbar.setHealth(bossHealth.currentHealth);
+            //healthbar.setHealth(healthOfBoss.getCurrentHp());
         }
-    }
+    }*/
 }
 
     

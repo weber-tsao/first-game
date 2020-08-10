@@ -464,7 +464,6 @@ GameObject:
   - component: {fileID: 861160508}
   - component: {fileID: 861160507}
   - component: {fileID: 861160511}
-  - component: {fileID: 861160513}
   - component: {fileID: 861160512}
   m_Layer: 0
   m_Name: boss
@@ -613,19 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 3
---- !u!114 &861160513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861160506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82ae02d15f9abde44a62cd1105cb3b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  healthbar: {fileID: 2124119424}
 --- !u!1 &1503463471
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +832,6 @@ GameObject:
   - component: {fileID: 1632707114}
   - component: {fileID: 1632707113}
   - component: {fileID: 1632707117}
-  - component: {fileID: 1632707119}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -975,19 +961,7 @@ MonoBehaviour:
   speedx: 0
   speedy: 0
   attackPower: 1
---- !u!114 &1632707119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632707112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3baac5e165347f64392f36da11f91e5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 3
+  healthbar: {fileID: 2124119424}
 --- !u!1 &1708810083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,4 +1313,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ae02d15f9abde44a62cd1105cb3b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 2124119423}
