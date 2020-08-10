@@ -29,4 +29,9 @@ public class bossHealth : MonoBehaviour
             print("boss dead");
         }
     }
+
+    public int getCurrentHp()
+    {
+        return currentHealth;
+    }
 }
