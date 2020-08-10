@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - wall
+  - boss
+  - healthBar
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - healthBar
   - 
   - 
   - 
@@ -47,4 +49,7 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 4161329341
+    locked: 0
+  - name: enemy
+    uniqueID: 3519440511
     locked: 0
