@@ -64,6 +64,17 @@ public class playercontroll : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject collideObject = collision.gameObject;
+        
+        if (collision.gameObject.tag == "bullet")
+        {
+            print("asdfasdf");
+            Destroy(this.gameObject);
+        }
+    }
+
     // set player attack power
     void SetAttackPower(int attack)
     {
