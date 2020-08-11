@@ -18,6 +18,7 @@ public class canon : MonoBehaviour
     void Update()
     {
         //InvokeRepeating("Fire", 2f, 1000f); 
+        //Fire();
     }
 
     void Fire()
@@ -32,13 +33,13 @@ public class canon : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * 20;
 
         // Destroy the bullet after 2 seconds
-        //Destroy(bullet, 0.5f);
+        //Destroy(bullet, 1.0f);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collideObject = collision.gameObject;
-        print("asdfasdf");
+    
         if (collision.gameObject.tag == "Player")
         {
             print("asdfasdf");
