@@ -20,6 +20,7 @@ public class playercontroll : MonoBehaviour
     public float speedx, speedy;
     public int attackPower = 1;
     public healthBar healthbar;
+    public playercontroll playerControll;
 
     // Start is called before the first frame update
     void Start()
@@ -79,5 +80,10 @@ public class playercontroll : MonoBehaviour
     int GetAttackPower()
     {
         return attackPower;
+    }
+
+    public Vector2 GetPlayerPosition()
+    {
+        return GetComponent<Rigidbody2D>().position;
     }
 }
