@@ -37,9 +37,4 @@ public class fullScreenTouch : MonoBehaviour
             player.velocity = new Vector2((clickPositionX - dragPositionX) / 10, (clickPositionY - dragPositionY) / 10);
         }
     }
-
-    public Rigidbody2D getObject()
-    {
-        return player;
-    }
 }

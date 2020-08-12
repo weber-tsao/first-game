@@ -123,7 +123,6 @@ public class canon : MonoBehaviour
         {
             print("destroy player");
             Destroy(collideObject);
-            Destroy(fullscreentouch.getObject());
         }
     }
 }
