@@ -12,17 +12,16 @@ public class canon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fireDown();
-        fireLeft();
+        InvokeRepeating("randomFire", 2f, 2f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //InvokeRepeating("Fire", 2f, 2f); 
-        //Fire();
-    }
 
+    }
+    
+    // bullet fire form left
     void fireLeft()
     {
         // Create the Bullet from the Bullet Prefab
@@ -44,6 +43,7 @@ public class canon : MonoBehaviour
         Destroy(bullet, 2f);
     }
 
+    // bullet fire form right
     void fireRight()
     {
         float coorY = Random.Range(5.0f, -5.5f);
@@ -59,6 +59,7 @@ public class canon : MonoBehaviour
         Destroy(bullet, 2f);
     }
 
+    // bullet fire form above
     void fireUp()
     {
         float coorX = Random.Range(3.2f, -2.1f);
@@ -74,6 +75,7 @@ public class canon : MonoBehaviour
         Destroy(bullet, 2.5f);
     }
 
+    // bullet fire form below
     void fireDown()
     {
         float coorX = Random.Range(3.2f, -2.1f);
@@ -89,6 +91,29 @@ public class canon : MonoBehaviour
         Destroy(bullet, 2.5f);
     }
 
+    // determine which direction the bullet will fire from
+    void randomFire()
+    {
+        int mode = Random.Range(0,4);
+
+        switch (mode)
+        {
+            case 0:
+                fireLeft();
+                break;
+            case 1:
+                fireRight();
+                break;
+            case 2:
+                fireUp();
+                break;
+            case 3:
+                fireDown();
+                break;
+        }
+    }
+
+    // is Trigger collide event
     public void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collideObject = collision.gameObject;
