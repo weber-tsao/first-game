@@ -92,6 +92,21 @@ public class canon : MonoBehaviour
         Destroy(bullet, 2.5f);
     }
 
+    void traceFire()
+    {
+        float coorX = Random.Range(3.2f, -2.1f);
+
+        GameObject bullet = (GameObject)Instantiate(
+            bulletVertical,
+            new Vector3(coorX, 6.4f, 0), new Quaternion(0, 0, 180, 0));
+
+        // Add velocity to the bullet
+        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * 6;
+
+        // Destroy the bullet after 2 seconds
+        Destroy(bullet, 2.5f);
+    }
+
     // determine which direction the bullet will fire from
     void randomFire()
     {
