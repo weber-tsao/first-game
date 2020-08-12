@@ -71,7 +71,6 @@ public class playercontroll : MonoBehaviour
         
         if (collision.gameObject.tag == "bullet")
         {
-            print("asdfasdf");
             Destroy(this.gameObject);
         }
     }
