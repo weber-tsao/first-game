@@ -33,7 +33,9 @@ public class fullScreenTouch : MonoBehaviour
     {
         dragPositionX = Input.mousePosition.x;
         dragPositionY = Input.mousePosition.y;
-        player.velocity = new Vector2((clickPositionX - dragPositionX) / 10, (clickPositionY - dragPositionY) / 10);
+        if (player != null) {
+            player.velocity = new Vector2((clickPositionX - dragPositionX) / 10, (clickPositionY - dragPositionY) / 10);
+        }
     }
 
     public Rigidbody2D getObject()
