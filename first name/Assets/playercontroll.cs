@@ -14,13 +14,9 @@ public class playercontroll : MonoBehaviour
     // field
     public Rigidbody2D player;  
     public float speed = 0.0001f;
-    public float mousePositionX;
-    public float mousePositionY;
-    public float mousePositionZ;
     public float speedx, speedy;
     public int attackPower = 1;
     public healthBar healthbar;
-    public playercontroll playerControll;
 
     // Start is called before the first frame update
     void Start()
@@ -34,20 +30,6 @@ public class playercontroll : MonoBehaviour
         speedx = player.velocity.x*0.01f;
         speedy = player.velocity.y*0.01f;
         player.velocity = player.velocity * (1-speed);// to slow down
-    }
-
-    // mouse onclick
-    void OnMouseDown() 
-    {
-        mousePositionX = Input.mousePosition.x;
-        mousePositionY = Input.mousePosition.y;
-        mousePositionZ = Input.mousePosition.z;
-    }
-
-    // mouse unclick
-    void OnMouseUp()
-    {
-        player.velocity = new Vector2((mousePositionX - Input.mousePosition.x) / 10 , (mousePositionY - Input.mousePosition.y) / 10);
     }
 
     // collide event
@@ -90,5 +72,10 @@ public class playercontroll : MonoBehaviour
     public Vector2 GetPlayerPosition()
     {
         return GetComponent<Rigidbody2D>().position;
+    }
+
+    public Rigidbody2D getGameObject()
+    {
+        return player;
     }
 }

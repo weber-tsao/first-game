@@ -8,6 +8,7 @@ public class canon : MonoBehaviour
     public GameObject bulletHorizontal;
     public GameObject bulletVertical;
     public Transform bulletSpawn;
+    public fullScreenTouch fullscreentouch;
 
     // Start is called before the first frame update
     void Start()
@@ -122,6 +123,7 @@ public class canon : MonoBehaviour
         {
             print("destroy player");
             Destroy(collideObject);
+            Destroy(fullscreentouch.getObject());
         }
     }
 }
