@@ -16,7 +16,7 @@ public class razerAttack : MonoBehaviour
     void Update()
     {
         razer.velocity = new Vector2(5, 0);
-        print(GetComponent<Rigidbody2D>().position);
+        //print(GetComponent<Rigidbody2D>().position);
         /*if(GetComponent<Rigidbody2D>().position.Equals(playerControll.GetPlayerPosition()))
         {
             Destroy(razer);
