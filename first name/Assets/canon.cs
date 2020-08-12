@@ -9,17 +9,26 @@ public class canon : MonoBehaviour
     public GameObject bulletVertical;
     public Transform bulletSpawn;
     public fullScreenTouch fullscreentouch;
+    public gameUI gameui;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("randomFire", 2f, 2f);
+        if (gameui.getIsPlaying() == true)
+        {
+            InvokeRepeating("randomFire", 2f, 2f);
+        }
+        print(gameui.getIsPlaying());
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (gameui.getIsPlaying() == true)
+        {
+            InvokeRepeating("randomFire", 2f, 2f);
+        }
+        print(gameui.getIsPlaying());
     }
     
     // bullet fire form left
