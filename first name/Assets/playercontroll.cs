@@ -16,7 +16,8 @@ public class playercontroll : MonoBehaviour
     public float speed = 0.0001f;
     public float speedx, speedy;
     public int attackPower = 1;
-    public healthBar healthbar;
+    public healthBar bossHealthbar;
+    public healthBar playerHealthbar;
 
     // Start is called before the first frame update
     void Start()
@@ -43,17 +44,20 @@ public class playercontroll : MonoBehaviour
         {
             print("Boss Hp: " + healthOfBoss.getCurrentHp());
             healthOfBoss.TakeDamage(attackPower, collideObject);// call the function of damaging
-            healthbar.setHealth(healthOfBoss.getCurrentHp());// set health bar to the value of current boss hp
+            bossHealthbar.setHealth(healthOfBoss.getCurrentHp());// set health bar to the value of current boss hp
         }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collideObject = collision.gameObject;
-        
+        playerHealth healthOfPlayer = GetComponent<playerHealth>();// create bossHealth object
+
         if (collision.gameObject.tag == "bullet")
         {
-            Destroy(this.gameObject);
+            print("Player Hp: " + healthOfPlayer.getCurrentHp());
+            healthOfPlayer.TakeDamage(1, this.gameObject);// call the function of damaging
+            playerHealthbar.setHealth(healthOfPlayer.getCurrentHp());// set health bar to the value of current boss hp
         }
     }
 
