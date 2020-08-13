@@ -196,10 +196,10 @@ public class canon : MonoBehaviour
                 new Vector3(coorXUp, -4.0f, 0), new Quaternion(0, 0, 0, 0));
 
                 // Add velocity to the bullet
-                bulletUp.GetComponent<Rigidbody2D>().velocity = bulletUp.transform.up * 100;
+                bulletUp.GetComponent<Rigidbody2D>().velocity = bulletUp.transform.up * 50;
 
                 // Destroy the bullet after 2 seconds
-                Destroy(bulletUp, 1.3f);
+                Destroy(bulletUp, 0.3f);
                 break;
             case 1:// right
                 GameObject bulletRight = (GameObject)Instantiate(
@@ -207,10 +207,10 @@ public class canon : MonoBehaviour
                 new Vector3(-3.5f, coorYRight, 0), new Quaternion(0, 0, 0, 0));
 
                 // Add velocity to the bullet
-                bulletRight.GetComponent<Rigidbody2D>().velocity = bulletRight.transform.right * 100;
+                bulletRight.GetComponent<Rigidbody2D>().velocity = bulletRight.transform.right * 50;
 
                 // Destroy the bullet after 2 seconds
-                Destroy(bulletRight, 2f);
+                Destroy(bulletRight, 1f);
                 break;
             case 2:// down
                 GameObject bulletDown = (GameObject)Instantiate(
@@ -218,10 +218,10 @@ public class canon : MonoBehaviour
                 new Vector3(coorXDown, 3.5f, 0), new Quaternion(0, 0, 180, 0));
 
                 // Add velocity to the bullet
-                bulletDown.GetComponent<Rigidbody2D>().velocity = bulletDown.transform.up * 100;
+                bulletDown.GetComponent<Rigidbody2D>().velocity = bulletDown.transform.up * 50;
 
                 // Destroy the bullet after 2 seconds
-                Destroy(bulletDown, 1.3f);
+                Destroy(bulletDown, 0.3f);
                 break;
             case 3:// left
                 GameObject bulletLeft = (GameObject)Instantiate(
@@ -229,10 +229,10 @@ public class canon : MonoBehaviour
                 new Vector3(5, coorYLeft, 0), new Quaternion(0, 0, 180, 0));
 
                 // Add velocity to the bullet
-                bulletLeft.GetComponent<Rigidbody2D>().velocity = bulletLeft.transform.right * 100;
+                bulletLeft.GetComponent<Rigidbody2D>().velocity = bulletLeft.transform.right * 50;
 
                 // Destroy the bullet after 2 seconds
-                Destroy(bulletLeft, 2f);
+                Destroy(bulletLeft, 1f);
                 break;
         }
     }
