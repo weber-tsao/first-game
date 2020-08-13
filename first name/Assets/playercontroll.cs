@@ -12,7 +12,8 @@ public class playercontroll : MonoBehaviour
 
 {  
     // field
-    public Rigidbody2D player;  
+    public Rigidbody2D player;
+    public GameObject arrow;
     public float speed = 0.0001f;
     public float speedx, speedy;
     public int attackPower = 1;
@@ -22,6 +23,7 @@ public class playercontroll : MonoBehaviour
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        hide();
     }
 
     // Update is called once per frame
@@ -77,5 +79,9 @@ public class playercontroll : MonoBehaviour
     public Rigidbody2D getGameObject()
     {
         return player;
+    }
+    void hide()
+    {
+        arrow.SetActive(false);
     }
 }
