@@ -5,24 +5,26 @@ using System.Collections.Specialized;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class playercontroll : MonoBehaviour
 
 {  
     // field
-    public Rigidbody2D player;  
+    public Rigidbody2D player;
+    public GameObject arrow;
     public float speed = 0.0001f;
-    public float mousePositionX;
-    public float mousePositionY;
-    public float mousePositionZ;
     public float speedx, speedy;
     public int attackPower = 1;
+    public healthBar bossHealthbar;
+    public healthBar playerHealthbar;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        hide();
     }
 
     // Update is called once per frame
@@ -33,30 +35,31 @@ public class playercontroll : MonoBehaviour
         player.velocity = player.velocity * (1-speed);// to slow down
     }
 
-    // mouse onclick
-    void OnMouseDown() 
-    {
-        mousePositionX = Input.mousePosition.x;
-        mousePositionY = Input.mousePosition.y;
-        mousePositionZ = Input.mousePosition.z;
-    }
-
-    // mouse unclick
-    void OnMouseUp()
-    {
-        player.velocity = new Vector2((mousePositionX - Input.mousePosition.x) / 10 , (mousePositionY - Input.mousePosition.y) / 10);
-    }
-
     // collide event
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        print(collision.gameObject.name);
+        //print(collision.gameObject.name);
         GameObject collideObject = collision.gameObject;
         bossHealth healthOfBoss = collideObject.GetComponent<bossHealth>();// create bossHealth object
         
         if (collision.gameObject.name == "boss") 
-        { 
+        {
+            print("Boss Hp: " + healthOfBoss.getCurrentHp());
             healthOfBoss.TakeDamage(attackPower, collideObject);// call the function of damaging
+            bossHealthbar.setHealth(healthOfBoss.getCurrentHp());// set health bar to the value of current boss hp
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject collideObject = collision.gameObject;
+        playerHealth healthOfPlayer = GetComponent<playerHealth>();// create bossHealth object
+
+        if (collision.gameObject.tag == "bullet")
+        {
+            print("Player Hp: " + healthOfPlayer.getCurrentHp());
+            healthOfPlayer.TakeDamage(1, this.gameObject);// call the function of damaging
+            playerHealthbar.setHealth(healthOfPlayer.getCurrentHp());// set health bar to the value of current boss hp
         }
     }
 
@@ -66,8 +69,23 @@ public class playercontroll : MonoBehaviour
         attackPower = attack;
     }
 
+    // get attack power
     int GetAttackPower()
     {
         return attackPower;
+    }
+
+    public Vector2 GetPlayerPosition()
+    {
+        return GetComponent<Rigidbody2D>().position;
+    }
+
+    public Rigidbody2D getGameObject()
+    {
+        return player;
+    }
+    void hide()
+    {
+        arrow.SetActive(false);
     }
 }

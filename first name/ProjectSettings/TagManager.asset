@@ -6,6 +6,8 @@ TagManager:
   tags:
   - wall
   - boss
+  - healthBar
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - healthBar
   - 
   - 
   - 
@@ -51,4 +53,13 @@ TagManager:
     locked: 0
   - name: enemy
     uniqueID: 3519440511
+    locked: 0
+  - name: bullet
+    uniqueID: 3096807921
+    locked: 0
+  - name: border
+    uniqueID: 3896090471
+    locked: 0
+  - name: canvas
+    uniqueID: 3928625021
     locked: 0
