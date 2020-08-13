@@ -32,7 +32,7 @@ public class canon : MonoBehaviour
             bulletSpawn.position,
             bulletSpawn.rotation);*/
 
-        float coorY = Random.Range(5.0f, -5.5f);
+        float coorY = Random.Range(4.0f, -4.2f);
     
         GameObject bullet = (GameObject)Instantiate(
             bulletHorizontal,
@@ -48,7 +48,7 @@ public class canon : MonoBehaviour
     // bullet fire form right
     void fireRight()
     {
-        float coorY = Random.Range(5.0f, -5.5f);
+        float coorY = Random.Range(4.0f, -4.2f);
 
         GameObject bullet = (GameObject)Instantiate(
             bulletHorizontal,
@@ -68,13 +68,13 @@ public class canon : MonoBehaviour
 
         GameObject bullet = (GameObject)Instantiate(
             bulletVertical,
-            new Vector3(coorX, -6.7f, 0), new Quaternion(0, 0, 0, 0));
+            new Vector3(coorX, -4.0f, 0), new Quaternion(0, 0, 0, 0));
 
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * 6;
 
         // Destroy the bullet after 2 seconds
-        Destroy(bullet, 2.5f);
+        Destroy(bullet, 1.3f);
     }
 
     // bullet fire form below
@@ -84,13 +84,13 @@ public class canon : MonoBehaviour
 
         GameObject bullet = (GameObject)Instantiate(
             bulletVertical,
-            new Vector3(coorX, 6.4f, 0), new Quaternion(0, 0, 180, 0));
+            new Vector3(coorX, 3.5f, 0), new Quaternion(0, 0, 180, 0));
 
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * 6;
 
         // Destroy the bullet after 2 seconds
-        Destroy(bullet, 2.5f);
+        Destroy(bullet, 1.3f);
     }
 
     void traceFire()
