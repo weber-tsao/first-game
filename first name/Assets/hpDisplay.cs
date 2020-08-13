@@ -10,24 +10,13 @@ public class hpDisplay : MonoBehaviour
     public Text hpText;
     public playerHealth playerhealth;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //hp = playerhealth.getMaxHp();
-    }
-
     // Update is called once per frame
     void Update()
     {
         displayHP();
     }
 
-    public void updateHP()
-    {
-        hp = playerhealth.getCurrentHp();
-        hpText.text = hp.ToString();
-    }
-
+    //display hp on the screen
     public void displayHP()
     {
         hp = playerhealth.getCurrentHp();
