@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class bossHealth : MonoBehaviour
+
+public class playerHealth : MonoBehaviour
 {
     // field
-    public const int maxHealth = 20;
+    public const int maxHealth = 5;
     public int currentHealth = maxHealth;
     public healthBar healthbar;
 
@@ -19,14 +20,14 @@ public class bossHealth : MonoBehaviour
     // damage the object and destroy it when health reached 0
     public void TakeDamage(int attackPower, GameObject gameObject)
     {
-        print("boss take damage of " + attackPower);
+        print("player take damage of " + attackPower);
         currentHealth -= attackPower;// damage the object
 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             Destroy(gameObject);
-            print("boss dead");
+            print("player dead");
         }
     }
 
@@ -36,4 +37,10 @@ public class bossHealth : MonoBehaviour
         return currentHealth;
     }
 
+    // get max hp
+    public int getMaxHp()
+    {
+        return maxHealth;
+    }
 }
+

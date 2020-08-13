@@ -15,7 +15,7 @@ public class bossControllor : MonoBehaviour
     int mode;
     int debuff;
     int bossAttack;
-    public healthBar healthbar;
+    //public healthBar healthbar;
 
     // constructor
     public bossControllor(int Defense1, int Atttack1, float Speed1, int Mode1, int Debuff1)

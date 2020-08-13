@@ -34,7 +34,7 @@ public class fullScreenTouch : MonoBehaviour
         dragPositionX = Input.mousePosition.x;
         dragPositionY = Input.mousePosition.y;
         if (player != null) {
-            player.velocity = new Vector2((clickPositionX - dragPositionX) / 10, (clickPositionY - dragPositionY) / 10);
+            player.velocity = new Vector2((clickPositionX - dragPositionX) / 50, (clickPositionY - dragPositionY) / 50);
         }
     }
 }
