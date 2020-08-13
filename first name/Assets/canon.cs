@@ -14,21 +14,13 @@ public class canon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameui.getIsPlaying() == true)
-        {
             InvokeRepeating("randomFire", 2f, 2f);
-        }
-        print(gameui.getIsPlaying());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameui.getIsPlaying() == true)
-        {
-            InvokeRepeating("randomFire", 2f, 2f);
-        }
-        print(gameui.getIsPlaying());
+ 
     }
     
     // bullet fire form left

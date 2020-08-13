@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class gameUI : MonoBehaviour
@@ -33,5 +34,10 @@ public class gameUI : MonoBehaviour
     public bool getIsPlaying()
     {
         return IsPlaying;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
     }
 }
