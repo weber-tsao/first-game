@@ -31,7 +31,9 @@ public class bossControllor : MonoBehaviour
     void Start()
     {
         boss = GetComponent<Rigidbody2D>();
-}
+        SetAttackPower(5);
+    }
+
 
     // Update is called once per frame
     void Update()

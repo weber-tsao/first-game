@@ -10,6 +10,7 @@ public class playerHealth : MonoBehaviour
     public const int maxHealth = 5;
     public int currentHealth = maxHealth;
     public healthBar healthbar;
+    public GameObject deadCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,14 @@ public class playerHealth : MonoBehaviour
             currentHealth = 0;
             Destroy(gameObject);
             print("player dead");
+
+            // create clear canvas above all layers
+            GameObject dead = (GameObject)Instantiate(
+            deadCanvas,
+           new Vector3(0.55f, -0.17f, 0), new Quaternion(0, 0, 0, 0));
+
+            // pause the game 
+            Time.timeScale = 0f;
         }
     }
 

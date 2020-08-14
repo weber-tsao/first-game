@@ -1095,6 +1095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 20
   healthbar: {fileID: 2124119424}
+  clearCanvas: {fileID: 2919669925913875457, guid: fc0a54d9e2d7fce40831b5997bf9db0e,
+    type: 3}
 --- !u!114 &861160513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2477,6 +2479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  arrow: {fileID: 0}
   speed: 0.001
   speedx: 0
   speedy: 0
@@ -2497,6 +2500,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 5
   healthbar: {fileID: 2066383838}
+  deadCanvas: {fileID: 1088534684408311058, guid: f8797c08c6b45b14b9ec15d17f2b0644,
+    type: 3}
 --- !u!1 &1708810083
 GameObject:
   m_ObjectHideFlags: 0
