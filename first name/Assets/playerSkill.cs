@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerSkill : MonoBehaviour
 {
@@ -12,21 +14,21 @@ public class playerSkill : MonoBehaviour
     public GameObject slash;
     public GameObject deadCanvas;
     public playercontroll playercontrol;
+    public int slashTime = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        //print(player.transform.position.x);
-        fireSkill();
+            //fireSkill();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
-    public void attack()
+    /*public void attack(int attackPower, GameObject gameObject)
     {
         currentHealth = playerhealth.getCurrentHp();
         print("player take damage of " + attackPower);
@@ -46,18 +48,29 @@ public class playerSkill : MonoBehaviour
             // pause the game 
             //Time.timeScale = 0f;
         }
-    }
+    }*/
 
-    void fireSkill()
+    public void fireSkill()
     {
         float coorX = Random.Range(3.2f, -2.1f);
-        
 
         GameObject playerSkill = (GameObject)Instantiate(
            slash,
-           new Vector3(playercontrol.getPlayerPositionX(), 3.92f, 0), new Quaternion(0, 0, 180, 0));
+           new Vector3(playercontrol.getPlayerPositionX(), playercontrol.getPlayerPositionY(), 0), new Quaternion(0, 0, 0, 0));
 
         // Add velocity to the bullet
         playerSkill.GetComponent<Rigidbody2D>().velocity = playerSkill.transform.up * 10;
+
+        GameObject playerSkill1 = (GameObject)Instantiate(
+           slash,
+           new Vector3(playercontrol.getPlayerPositionX(), playercontrol.getPlayerPositionY(), 0), new Quaternion(0, 0, 0, 0));
+
+        // Add velocity to the bullet
+        playerSkill1.GetComponent<Rigidbody2D>().velocity = playerSkill1.transform.up * 10;
+    }
+
+    public int getSlashTime()
+    {
+        return slashTime;
     }
 }

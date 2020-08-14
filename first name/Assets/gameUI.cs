@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
 
 public class gameUI : MonoBehaviour
 {
@@ -12,11 +13,14 @@ public class gameUI : MonoBehaviour
     public GameObject playButton; 
     public bool IsPlaying = false;
     public GameObject startCanvas;
+    public playerSkill playerskill;
+    //public int time;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameTitle.SetActive(true); 
+        gameTitle.SetActive(true);
+        //time = playerskill.getSlashTime();
         gameOverTitle.SetActive(false);
     }
 
@@ -42,5 +46,10 @@ public class gameUI : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+    }
+
+    public void starBurstSteam()
+    {
+            playerskill.fireSkill();
     }
 }

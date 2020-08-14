@@ -8,6 +8,7 @@ TagManager:
   - boss
   - healthBar
   - bullet
+  - slash
   layers:
   - Default
   - TransparentFX
