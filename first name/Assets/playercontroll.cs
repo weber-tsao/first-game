@@ -83,11 +83,6 @@ public class playercontroll : MonoBehaviour
         return player;
     }
 
-    void hide()
-    {
-        arrow.SetActive(false);
-    }
-
     public float getPlayerPositionX()
     {
         return player.transform.position.x;

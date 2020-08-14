@@ -44,7 +44,7 @@ public class playerSkill : MonoBehaviour
             new Vector3(0.55f, -0.17f, 0), new Quaternion(0, 0, 0, 0));
 
             // pause the game 
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
         }
     }
 
