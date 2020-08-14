@@ -30,10 +30,10 @@ public class playerHealth : MonoBehaviour
             Destroy(gameObject);
             print("player dead");
 
-            // create clear canvas above all layers
+            // create dead canvas above all layers
             GameObject dead = (GameObject)Instantiate(
             deadCanvas,
-           new Vector3(0.55f, -0.17f, 0), new Quaternion(0, 0, 0, 0));
+            new Vector3(0.55f, -0.17f, 0), new Quaternion(0, 0, 0, 0));
 
             // pause the game 
             Time.timeScale = 0f;

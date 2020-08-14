@@ -175,7 +175,7 @@ public class canon : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             print("destroy player");
-            Destroy(collideObject);
+            // Destroy(collideObject);
         }
     }
 

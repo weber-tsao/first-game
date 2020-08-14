@@ -29,7 +29,7 @@ public class playercontroll : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
+    {
         speedx = player.velocity.x*0.01f;
         speedy = player.velocity.y*0.01f;
         player.velocity = player.velocity * (1-speed);// to slow down
@@ -77,7 +77,7 @@ public class playercontroll : MonoBehaviour
 
     public Vector2 GetPlayerPosition()
     {
-        return GetComponent<Rigidbody2D>().position;
+        return player.position;
     }
 
     public Rigidbody2D getGameObject()
@@ -87,5 +87,15 @@ public class playercontroll : MonoBehaviour
     void hide()
     {
         arrow.SetActive(false);
+    }
+
+    public float getPlayerPositionX()
+    {
+        return player.transform.position.x;
+    }
+
+    public float getPlayerPositionY()
+    {
+        return player.transform.position.y;
     }
 }
