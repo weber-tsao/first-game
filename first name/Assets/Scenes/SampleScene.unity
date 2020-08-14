@@ -644,10 +644,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  arrow: {fileID: 0}
   clickPositionX: 0
   clickPositionY: 0
   dragPositionX: 0
   dragPositionY: 0
+  pc: {fileID: 0}
 --- !u!114 &386680979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,10 +1221,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1632707113}
+  arrow: {fileID: 7665369273899622751, guid: 08dbef209e086b54d9d0bb692cf74e9a, type: 3}
   clickPositionX: 0
   clickPositionY: 0
   dragPositionX: 0
   dragPositionY: 0
+  pc: {fileID: 1632707117}
 --- !u!212 &1021993801
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1992,10 +1996,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  arrow: {fileID: 0}
   clickPositionX: 0
   clickPositionY: 0
   dragPositionX: 0
   dragPositionY: 0
+  pc: {fileID: 0}
 --- !u!212 &1462822125
 SpriteRenderer:
   m_ObjectHideFlags: 0
