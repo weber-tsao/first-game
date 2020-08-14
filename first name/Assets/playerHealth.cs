@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class bossHealth : MonoBehaviour
+
+public class playerHealth : MonoBehaviour
 {
     // field
-    public const int maxHealth = 20;
+    public const int maxHealth = 5;
     public int currentHealth = maxHealth;
     public healthBar healthbar;
-    public GameObject clearCanvas;
+    public GameObject deadCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +21,19 @@ public class bossHealth : MonoBehaviour
     // damage the object and destroy it when health reached 0
     public void TakeDamage(int attackPower, GameObject gameObject)
     {
-        print("boss take damage of " + attackPower);
+        print("player take damage of " + attackPower);
         currentHealth -= attackPower;// damage the object
 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             Destroy(gameObject);
-            print("boss dead");
+            print("player dead");
 
-            // create clear canvas above all layers
-            GameObject clear= (GameObject)Instantiate(
-            clearCanvas,
-           new Vector3(0.50352f, -0.33f, 0), new Quaternion(0, 0, 0, 0));
+            // create dead canvas above all layers
+            GameObject dead = (GameObject)Instantiate(
+            deadCanvas,
+            new Vector3(0.55f, -0.17f, 0), new Quaternion(0, 0, 0, 0));
 
             // pause the game 
             Time.timeScale = 0f;
@@ -46,4 +46,10 @@ public class bossHealth : MonoBehaviour
         return currentHealth;
     }
 
+    // get max hp
+    public int getMaxHp()
+    {
+        return maxHealth;
+    }
 }
+
