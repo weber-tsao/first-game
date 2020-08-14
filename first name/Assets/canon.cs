@@ -19,7 +19,7 @@ public class canon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            InvokeRepeating("randomFire", 2f, 2f);
+        InvokeRepeating("randomFire", 2f, 2f);
     }
 
     // Update is called once per frame
