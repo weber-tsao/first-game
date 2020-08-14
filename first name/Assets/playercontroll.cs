@@ -14,10 +14,12 @@ public class playercontroll : MonoBehaviour
     // field
     public Rigidbody2D player;
     public float speed = 0.0001f;
+
     public float speedx, speedy;
     public int attackPower = 1;
     public healthBar bossHealthbar;
     public healthBar playerHealthbar;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class playercontroll : MonoBehaviour
         speedy = player.velocity.y*0.01f;
         player.velocity = player.velocity * (1-speed);// to slow down
     }
+
 
     // collide event
     public void OnCollisionEnter2D(Collision2D collision)

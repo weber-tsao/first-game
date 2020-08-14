@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class bossControllor : MonoBehaviour
 {
     // field
@@ -41,6 +42,7 @@ public class bossControllor : MonoBehaviour
        
     }
 
+
     public void SetAttackPower(int x)
     {
         attackPower = x;
@@ -53,6 +55,7 @@ public class bossControllor : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+
     }
 }
 
