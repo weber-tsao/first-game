@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class bossHealth : MonoBehaviour
     public const int maxHealth = 20;
     public int currentHealth = maxHealth;
     public healthBar healthbar;
+    public GameObject clearCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,14 @@ public class bossHealth : MonoBehaviour
             currentHealth = 0;
             Destroy(gameObject);
             print("boss dead");
+
+            // create clear canvas above all layers
+            GameObject clear= (GameObject)Instantiate(
+            clearCanvas,
+           new Vector3(0.50352f, -0.33f, 0), new Quaternion(0, 0, 0, 0));
+
+            // pause the game 
+            Time.timeScale = 0f;
         }
     }
 
