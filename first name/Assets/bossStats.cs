@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class bossStats : MonoBehaviour
+
+
 {
+    public int bossBlood = 1;
+    
     // Start is called before the first frame update
     void Start()
     {

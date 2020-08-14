@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 383373853}
   m_Layer: 0
   m_Name: right border
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 441154510}
   m_Layer: 0
   m_Name: upward border
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 717910939}
   m_Layer: 0
   m_Name: left border
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,9 +389,10 @@ GameObject:
   - component: {fileID: 861160508}
   - component: {fileID: 861160507}
   - component: {fileID: 861160511}
+  - component: {fileID: 861160512}
   m_Layer: 0
   m_Name: boss
-  m_TagString: Untagged
+  m_TagString: boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,7 +411,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -523,6 +524,19 @@ MonoBehaviour:
   boss: {fileID: 0}
   blood: 10
   speed: 0.01
+--- !u!114 &861160512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861160506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3baac5e165347f64392f36da11f91e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 2
 --- !u!1 &1555370689
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +632,7 @@ GameObject:
   - component: {fileID: 1580079022}
   m_Layer: 0
   m_Name: downward border
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -678,7 +692,7 @@ GameObject:
   - component: {fileID: 1632707117}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -802,3 +816,6 @@ MonoBehaviour:
   mousePositionX: 0
   mousePositionY: 0
   mousePositionZ: 0
+  speedx: 0
+  speedy: 0
+  attackPower: 1
