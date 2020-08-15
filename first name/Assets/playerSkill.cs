@@ -159,7 +159,23 @@ public class playerSkill : MonoBehaviour
 
     public void starBurstStream()
     {
-        InvokeRepeating("createSlashTry", 0.1f, 0.1f);
+        //InvokeRepeating("createSlashTry", 0.1f, 0.1f);
+        Invoke("createSlashTry", 0f);
+        Invoke("createSlashTry", 0.5f);
+        Invoke("createSlashTry", 1.0f);
+        Invoke("createSlashTry", 1.29f);
+        Invoke("createSlashTry", 1.48f);
+        Invoke("createSlashTry", 1.65f);
+        Invoke("createSlashTry", 1.84f);
+        Invoke("createSlashTry", 2.01f);
+        Invoke("createSlashTry", 2.25f);
+        Invoke("createSlashTry", 2.48f);
+        Invoke("createSlashTry", 2.62f);
+        Invoke("createSlashTry", 2.75f);
+        Invoke("createSlashTry", 2.82f);
+        Invoke("createSlashTry", 2.89f);
+        Invoke("createSlashTry", 2.95f);
+        Invoke("createSlashTry", 3.0f);
     }
 
     public float getPositionX()
