@@ -797,6 +797,7 @@ MonoBehaviour:
   IsPlaying: 0
   startCanvas: {fileID: 1987670214}
   playerskill: {fileID: 1632707119}
+  player: {fileID: 1632707112}
 --- !u!1 &441154509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,6 +2543,7 @@ MonoBehaviour:
   attackPower: 1
   bossHealthbar: {fileID: 2124119424}
   playerHealthbar: {fileID: 2066383838}
+  healthOfPlayer: {fileID: 0}
 --- !u!114 &1632707118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2558,6 +2560,8 @@ MonoBehaviour:
   healthbar: {fileID: 2066383838}
   deadCanvas: {fileID: 1088534684408311058, guid: f8797c08c6b45b14b9ec15d17f2b0644,
     type: 3}
+  damageflag: 1
+  timer_f: 0
 --- !u!114 &1632707119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2572,7 +2576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1632707112}
   playerhealth: {fileID: 1632707118}
-  slash: {fileID: 3638326134958456461, guid: 30f72a0f5a65e8a4f9dba7f2c3c1a032, type: 3}
+  slash: {fileID: 3466010893401265658, guid: c1179291b3a3bcc41b32fb9e84497946, type: 3}
   deadCanvas: {fileID: 7202268841164189343, guid: 6317747a55129784aada168f75e9eac3,
     type: 3}
   playercontrol: {fileID: 1632707117}

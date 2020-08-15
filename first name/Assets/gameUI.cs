@@ -14,6 +14,7 @@ public class gameUI : MonoBehaviour
     public bool IsPlaying = false;
     public GameObject startCanvas;
     public playerSkill playerskill;
+    public GameObject player;
     //public int time;
 
     // Start is called before the first frame update

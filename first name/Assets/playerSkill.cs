@@ -106,7 +106,7 @@ public class playerSkill : MonoBehaviour
         }
     }
 
-    void createSlash(float playerPosX, float playerPosY, int rotate)
+        void createSlash(float playerPosX, float playerPosY, int rotate)
     {
         Quaternion rotation = Quaternion.Euler(0, 0, rotate);
 
@@ -114,8 +114,10 @@ public class playerSkill : MonoBehaviour
            slash,
            new Vector3(playerPosX, playerPosY, 0), rotation);
 
+        playerSkill.transform.parent = transform;
+
         // Add velocity to the bullet
-        playerSkill.GetComponent<Rigidbody2D>().velocity = playerSkill.transform.up * 8;
+        playerSkill.GetComponent<Rigidbody2D>().velocity = playerSkill.transform.up * 5;
 
         Destroy(playerSkill, 0.2f);
     }
