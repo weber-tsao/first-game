@@ -16,7 +16,7 @@ public class bossControllor : MonoBehaviour
     int mode;
     int debuff;
     int bossAttack;
-    //public healthBar healthbar;
+    public healthBar bossHealthbar;
 
     // constructor
     public bossControllor(int Defense1, int Atttack1, float Speed1, int Mode1, int Debuff1)
@@ -56,6 +56,19 @@ public class bossControllor : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
 
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject collideObject = collision.gameObject;
+        bossHealth healthOfBoss = GetComponent<bossHealth>();// create bossHealth object
+
+        if (collision.gameObject.tag == "slash")
+        {
+            print("Boss Hp: " + healthOfBoss.getCurrentHp());
+            healthOfBoss.takeDamageFromSlash(1, this.gameObject);// call the function of damaging
+            bossHealthbar.setHealth(healthOfBoss.getCurrentHp());// set health bar to the value of current boss hp
+        }
     }
 }
 

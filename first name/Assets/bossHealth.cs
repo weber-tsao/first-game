@@ -40,6 +40,27 @@ public class bossHealth : MonoBehaviour
         }
     }
 
+    public void takeDamageFromSlash(int attackPower, GameObject gameObject)
+    {
+        print("boss take damage of " + attackPower);
+        currentHealth -= attackPower;// damage the object
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroy(gameObject);
+            print("boss dead");
+
+            // create clear canvas above all layers
+            GameObject clear = (GameObject)Instantiate(
+            clearCanvas,
+            new Vector3(0.50352f, -0.33f, 0), new Quaternion(0, 0, 0, 0));
+
+            // pause the game 
+            Time.timeScale = 0f;
+        }
+    }
+
     // get current hp
     public int getCurrentHp()
     {
