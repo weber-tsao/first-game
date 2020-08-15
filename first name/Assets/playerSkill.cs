@@ -16,18 +16,6 @@ public class playerSkill : MonoBehaviour
     public playercontroll playercontrol;
     public int slashTime = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-            //fireSkill();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
     /*public void attack(int attackPower, GameObject gameObject)
     {
         currentHealth = playerhealth.getCurrentHp();
@@ -106,7 +94,45 @@ public class playerSkill : MonoBehaviour
         }
     }
 
-        void createSlash(float playerPosX, float playerPosY, int rotate)
+    public void fireSkillwww()
+    {
+        
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0f), (playercontrol.getPlayerPositionY() + 1.0f), 5, 0f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 1.2f), playercontrol.getPlayerPositionY(), 19, 0.5f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 1.0f), (playercontrol.getPlayerPositionY() + 0.9f), 22, 1.0f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.7f), (playercontrol.getPlayerPositionY() + 0.67f), -25, 1.29f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 1.1f), (playercontrol.getPlayerPositionY() + 0.50f), 24, 1.48f));
+               
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.8f), (playercontrol.getPlayerPositionY() + 0.3f), -21, 1.65f));
+               
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.3f), (playercontrol.getPlayerPositionY() + 0.85f), 11, 1.84f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.2f), (playercontrol.getPlayerPositionY() + 1.4f), -15, 2.01f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.6f), (playercontrol.getPlayerPositionY() + 1.0f), 9, 2.25f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.52f), (playercontrol.getPlayerPositionY() + 0.69f), -21, 2.48f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.6f), (playercontrol.getPlayerPositionY() + 0.9f), 2, 2.62f));
+               
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.65f), (playercontrol.getPlayerPositionY() + 1.15f), -14, 2.75f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.5f), (playercontrol.getPlayerPositionY() + 1.6f), 18, 2.82f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.7f), (playercontrol.getPlayerPositionY() + 1.5f), -16, 2.89f));
+                
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.8f), (playercontrol.getPlayerPositionY() + 0.4f), 20, 2.95f));
+               
+                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.69f), (playercontrol.getPlayerPositionY() + 0.6f), -9, 3.0f));
+                
+        
+    }
+
+    void createSlash(float playerPosX, float playerPosY, int rotate)
     {
         Quaternion rotation = Quaternion.Euler(0, 0, rotate);
 
@@ -131,5 +157,10 @@ public class playerSkill : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         createSlash(playerPosX, playerPosY, rotate);
+    }
+
+    public void starBurstStream()
+    {
+        fireSkillwww();
     }
 }

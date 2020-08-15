@@ -51,21 +51,6 @@ public class gameUI : MonoBehaviour
 
     public void starBurstSteam()
     {
-        playerskill.fireSkill(12);
-        playerskill.fireSkill(13);
-        playerskill.fireSkill(9);
-        playerskill.fireSkill(15);
-        playerskill.fireSkill(4);
-        playerskill.fireSkill(10);
-        playerskill.fireSkill(8);
-        playerskill.fireSkill(1);
-        playerskill.fireSkill(6);
-        playerskill.fireSkill(2);
-        playerskill.fireSkill(5);
-        playerskill.fireSkill(11);
-        playerskill.fireSkill(0);
-        playerskill.fireSkill(14);
-        playerskill.fireSkill(3);
-        playerskill.fireSkill(7);
+        Invoke("playerskill.fireSkillwww", 0f);
     }
 }

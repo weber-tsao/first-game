@@ -2823,7 +2823,7 @@ GameObject:
   - component: {fileID: 1756858596}
   - component: {fileID: 1756858595}
   m_Layer: 5
-  m_Name: starBurstSteam
+  m_Name: starBurstStream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2892,9 +2892,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 386680979}
-        m_TargetAssemblyTypeName: gameUI, Assembly-CSharp
-        m_MethodName: starBurstSteam
+      - m_Target: {fileID: 1632707119}
+        m_TargetAssemblyTypeName: playerSkill, Assembly-CSharp
+        m_MethodName: starBurstStream
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3204,7 +3204,7 @@ GameObject:
   - component: {fileID: 1928222798}
   - component: {fileID: 1928222797}
   m_Layer: 5
-  m_Name: Button
+  m_Name: defendButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
