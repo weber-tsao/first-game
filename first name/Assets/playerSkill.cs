@@ -15,28 +15,7 @@ public class playerSkill : MonoBehaviour
     public GameObject deadCanvas;
     public playercontroll playercontrol;
     public int slashTime = 0;
-
-    /*public void attack(int attackPower, GameObject gameObject)
-    {
-        currentHealth = playerhealth.getCurrentHp();
-        print("player take damage of " + attackPower);
-        currentHealth -= attackPower;// damage the object
-
-        if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            Destroy(player);
-            print("player dead");
-
-            // create dead canvas above all layers
-            GameObject dead = (GameObject)Instantiate(
-            deadCanvas,
-            new Vector3(0.55f, -0.17f, 0), new Quaternion(0, 0, 0, 0));
-
-            // pause the game 
-            //Time.timeScale = 0f;
-        }
-    }*/
+    float recordTime;
 
     public void fireSkill(int mode)
     {
@@ -97,44 +76,63 @@ public class playerSkill : MonoBehaviour
     public void fireSkillwww()
     {
         
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0f), (playercontrol.getPlayerPositionY() + 1.0f), 5, 0f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 1.2f), playercontrol.getPlayerPositionY(), 19, 0.5f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 1.0f), (playercontrol.getPlayerPositionY() + 0.9f), 22, 1.0f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.7f), (playercontrol.getPlayerPositionY() + 0.67f), -25, 1.29f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 1.1f), (playercontrol.getPlayerPositionY() + 0.50f), 24, 1.48f));
-               
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.8f), (playercontrol.getPlayerPositionY() + 0.3f), -21, 1.65f));
-               
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.3f), (playercontrol.getPlayerPositionY() + 0.85f), 11, 1.84f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.2f), (playercontrol.getPlayerPositionY() + 1.4f), -15, 2.01f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.6f), (playercontrol.getPlayerPositionY() + 1.0f), 9, 2.25f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.52f), (playercontrol.getPlayerPositionY() + 0.69f), -21, 2.48f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.6f), (playercontrol.getPlayerPositionY() + 0.9f), 2, 2.62f));
-               
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.65f), (playercontrol.getPlayerPositionY() + 1.15f), -14, 2.75f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.5f), (playercontrol.getPlayerPositionY() + 1.6f), 18, 2.82f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.7f), (playercontrol.getPlayerPositionY() + 1.5f), -16, 2.89f));
-                
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.8f), (playercontrol.getPlayerPositionY() + 0.4f), 20, 2.95f));
-               
-                StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.69f), (playercontrol.getPlayerPositionY() + 0.6f), -9, 3.0f));
-                
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0f), (playercontrol.getPlayerPositionY() + 1.0f), 5, 0f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() - 1.2f), playercontrol.getPlayerPositionY(), 19, 0.5f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() - 1.0f), (playercontrol.getPlayerPositionY() + 0.9f), 22, 1.0f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.7f), (playercontrol.getPlayerPositionY() + 0.67f), -25, 1.29f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() - 1.1f), (playercontrol.getPlayerPositionY() + 0.50f), 24, 1.48f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.8f), (playercontrol.getPlayerPositionY() + 0.3f), -21, 1.65f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.3f), (playercontrol.getPlayerPositionY() + 0.85f), 11, 1.84f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.2f), (playercontrol.getPlayerPositionY() + 1.4f), -15, 2.01f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.6f), (playercontrol.getPlayerPositionY() + 1.0f), 9, 2.25f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.52f), (playercontrol.getPlayerPositionY() + 0.69f), -21, 2.48f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.6f), (playercontrol.getPlayerPositionY() + 0.9f), 2, 2.62f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.65f), (playercontrol.getPlayerPositionY() + 1.15f), -14, 2.75f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.5f), (playercontrol.getPlayerPositionY() + 1.6f), 18, 2.82f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.7f), (playercontrol.getPlayerPositionY() + 1.5f), -16, 2.89f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() - 0.8f), (playercontrol.getPlayerPositionY() + 0.4f), 20, 2.95f));
+
+            StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.69f), (playercontrol.getPlayerPositionY() + 0.6f), -9, 3.0f));
+
         
     }
 
     void createSlash(float playerPosX, float playerPosY, int rotate)
     {
         Quaternion rotation = Quaternion.Euler(0, 0, rotate);
+
+        GameObject playerSkill = (GameObject)Instantiate(
+           slash,
+           new Vector3(playerPosX, playerPosY, 0), rotation);
+
+        playerSkill.transform.parent = transform;
+
+        // Add velocity to the bullet
+        playerSkill.GetComponent<Rigidbody2D>().velocity = playerSkill.transform.up * 5;
+
+        Destroy(playerSkill, 0.2f);
+    }
+
+    void createSlashTry()
+    {
+        int mode = Random.Range(0, 180);
+        float playerPosX = getPositionX();
+        float playerPosY = getPositionY();
+        Quaternion rotation = Quaternion.Euler(0, 0, mode);
 
         GameObject playerSkill = (GameObject)Instantiate(
            slash,
@@ -161,6 +159,16 @@ public class playerSkill : MonoBehaviour
 
     public void starBurstStream()
     {
-        fireSkillwww();
+        InvokeRepeating("createSlashTry", 0.1f, 0.1f);
+    }
+
+    public float getPositionX()
+    {
+        return playercontrol.getPlayerPositionX();
+    }
+
+    public float getPositionY()
+    {
+        return playercontrol.getPlayerPositionY();
     }
 }
