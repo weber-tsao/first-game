@@ -17,6 +17,7 @@ public class playerSkill : MonoBehaviour
     public int slashTime = 0;
     float recordTime;
     public GameObject burstFace;
+    bool isSkillFired = false;
 
     void Start()
     {
@@ -150,24 +151,28 @@ public class playerSkill : MonoBehaviour
 
     public void starBurstStream()
     {
-        burstFace.SetActive(true);
-        Invoke("slashFire", 0f);
-        Invoke("slashFire", 0.5f);
-        Invoke("slashFire", 1.0f);
-        Invoke("slashFire", 1.29f);
-        Invoke("slashFire", 1.48f);
-        Invoke("slashFire", 1.65f);
-        Invoke("slashFire", 1.84f);
-        Invoke("slashFire", 2.01f);
-        Invoke("slashFire", 2.25f);
-        Invoke("slashFire", 2.48f);
-        Invoke("slashFire", 2.62f);
-        Invoke("slashFire", 2.75f);
-        Invoke("slashFire", 2.82f);
-        Invoke("slashFire", 2.89f);
-        Invoke("slashFire", 2.95f);
-        Invoke("slashFire", 3.0f);
-        Invoke("faceDisappear", 3.2f);
+        if (isSkillFired == false)
+        {
+            burstFace.SetActive(true);
+            Invoke("slashFire", 0f);
+            Invoke("slashFire", 0.5f);
+            Invoke("slashFire", 1.0f);
+            Invoke("slashFire", 1.29f);
+            Invoke("slashFire", 1.48f);
+            Invoke("slashFire", 1.65f);
+            Invoke("slashFire", 1.84f);
+            Invoke("slashFire", 2.01f);
+            Invoke("slashFire", 2.25f);
+            Invoke("slashFire", 2.48f);
+            Invoke("slashFire", 2.62f);
+            Invoke("slashFire", 2.75f);
+            Invoke("slashFire", 2.82f);
+            Invoke("slashFire", 2.89f);
+            Invoke("slashFire", 2.95f);
+            Invoke("slashFire", 3.0f);
+            Invoke("faceDisappear", 3.2f);
+            isSkillFired = true;
+        }
     }
 
     public float getPositionX()
