@@ -56,15 +56,18 @@ public class playerHealth : MonoBehaviour
     {
         return maxHealth;
     }
+
     public void HeathcliffShield()
     {
         damageflag = false;
         Invoke("setDamageflag",2);
     }
+
     public void setDamageflag()
     {
         damageflag = true;
     }
+
     public bool getDamageflag()
     {
         return damageflag;

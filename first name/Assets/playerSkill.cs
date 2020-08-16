@@ -16,8 +16,14 @@ public class playerSkill : MonoBehaviour
     public playercontroll playercontrol;
     public int slashTime = 0;
     float recordTime;
+    public GameObject burstFace;
 
-    public void fireSkill(int mode)
+    void Start()
+    {
+        burstFace.SetActive(false);
+    }
+
+    /*public void fireSkill(int mode)
     {
 
         switch (mode)
@@ -71,9 +77,9 @@ public class playerSkill : MonoBehaviour
                 StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.69f), (playercontrol.getPlayerPositionY() + 0.6f), -9, 3.0f));
                 break;
         }
-    }
+    }*/
 
-    public void fireSkillwww()
+    /*public void fireSkillwww()
     {
         
             StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0f), (playercontrol.getPlayerPositionY() + 1.0f), 5, 0f));
@@ -109,29 +115,14 @@ public class playerSkill : MonoBehaviour
             StartCoroutine(wait((playercontrol.getPlayerPositionX() + 0.69f), (playercontrol.getPlayerPositionY() + 0.6f), -9, 3.0f));
 
         
-    }
+    }*/
 
-    void createSlash(float playerPosX, float playerPosY, int rotate)
+    void slashFire()
     {
-        Quaternion rotation = Quaternion.Euler(0, 0, rotate);
-
-        GameObject playerSkill = (GameObject)Instantiate(
-           slash,
-           new Vector3(playerPosX, playerPosY, 0), rotation);
-
-        playerSkill.transform.parent = transform;
-
-        // Add velocity to the bullet
-        playerSkill.GetComponent<Rigidbody2D>().velocity = playerSkill.transform.up * 5;
-
-        Destroy(playerSkill, 0.2f);
-    }
-
-    void createSlashTry()
-    {
-        int mode = Random.Range(0, 180);
+        int mode = Random.Range(0, 360);
         float playerPosX = getPositionX();
         float playerPosY = getPositionY();
+
         Quaternion rotation = Quaternion.Euler(0, 0, mode);
 
         GameObject playerSkill = (GameObject)Instantiate(
@@ -151,31 +142,32 @@ public class playerSkill : MonoBehaviour
         return slashTime;
     }
 
-    IEnumerator wait(float playerPosX, float playerPosY, int rotate, float time)
+    /*IEnumerator wait(float playerPosX, float playerPosY, int rotate, float time)
     {
         yield return new WaitForSeconds(time);
         createSlash(playerPosX, playerPosY, rotate);
-    }
+    }*/
 
     public void starBurstStream()
     {
-        //InvokeRepeating("createSlashTry", 0.1f, 0.1f);
-        Invoke("createSlashTry", 0f);
-        Invoke("createSlashTry", 0.5f);
-        Invoke("createSlashTry", 1.0f);
-        Invoke("createSlashTry", 1.29f);
-        Invoke("createSlashTry", 1.48f);
-        Invoke("createSlashTry", 1.65f);
-        Invoke("createSlashTry", 1.84f);
-        Invoke("createSlashTry", 2.01f);
-        Invoke("createSlashTry", 2.25f);
-        Invoke("createSlashTry", 2.48f);
-        Invoke("createSlashTry", 2.62f);
-        Invoke("createSlashTry", 2.75f);
-        Invoke("createSlashTry", 2.82f);
-        Invoke("createSlashTry", 2.89f);
-        Invoke("createSlashTry", 2.95f);
-        Invoke("createSlashTry", 3.0f);
+        burstFace.SetActive(true);
+        Invoke("slashFire", 0f);
+        Invoke("slashFire", 0.5f);
+        Invoke("slashFire", 1.0f);
+        Invoke("slashFire", 1.29f);
+        Invoke("slashFire", 1.48f);
+        Invoke("slashFire", 1.65f);
+        Invoke("slashFire", 1.84f);
+        Invoke("slashFire", 2.01f);
+        Invoke("slashFire", 2.25f);
+        Invoke("slashFire", 2.48f);
+        Invoke("slashFire", 2.62f);
+        Invoke("slashFire", 2.75f);
+        Invoke("slashFire", 2.82f);
+        Invoke("slashFire", 2.89f);
+        Invoke("slashFire", 2.95f);
+        Invoke("slashFire", 3.0f);
+        Invoke("faceDisappear", 3.2f);
     }
 
     public float getPositionX()
@@ -186,5 +178,10 @@ public class playerSkill : MonoBehaviour
     public float getPositionY()
     {
         return playercontrol.getPlayerPositionY();
+    }
+
+    void faceDisappear()
+    {
+        burstFace.SetActive(false);
     }
 }

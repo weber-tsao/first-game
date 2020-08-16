@@ -54,7 +54,7 @@ public class bossHealth : MonoBehaviour
             // create clear canvas above all layers
             GameObject clear = (GameObject)Instantiate(
             clearCanvas,
-            new Vector3(0.50352f, -0.33f, 0), new Quaternion(0, 0, 0, 0));
+            new Vector3(0.50352f, 0.33f, 0), new Quaternion(0, 0, 0, 0));
 
             // pause the game 
             Time.timeScale = 0f;
