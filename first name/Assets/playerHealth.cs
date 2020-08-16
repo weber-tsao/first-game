@@ -19,7 +19,7 @@ public class playerHealth : MonoBehaviour
     void Start()
     {
         healthbar.setMaxHealth(maxHealth);// set health bar to max hp 
-        immortalObject.SetActive(false);
+        immortalObject.SetActive(false);// set immortalObject invisible
     }
 
     // damage the object and destroy it when health reached 0
@@ -40,9 +40,6 @@ public class playerHealth : MonoBehaviour
                 GameObject dead = (GameObject)Instantiate(
                 deadCanvas,
                 new Vector3(0.55f, -0.17f, 0), new Quaternion(0, 0, 0, 0));
-
-                // pause the game 
-                //Time.timeScale = 0f;
             }
         }
     }
@@ -59,6 +56,7 @@ public class playerHealth : MonoBehaviour
         return maxHealth;
     }
 
+    // parry attack for player
     public void HeathcliffShield()
     {
         damageflag = false;

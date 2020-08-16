@@ -7,7 +7,7 @@ using System.Threading;
 
 public class gameUI : MonoBehaviour
 {
-
+    // field
     public GameObject gameTitle; 
     public GameObject gameOverTitle; 
     public GameObject playButton; 
@@ -15,13 +15,11 @@ public class gameUI : MonoBehaviour
     public GameObject startCanvas;
     public playerSkill playerskill;
     public GameObject player;
-    //public int time;
 
     // Start is called before the first frame update
     void Start()
     {
         gameTitle.SetActive(true);
-        //time = playerskill.getSlashTime();
         gameOverTitle.SetActive(false);
     }
 
@@ -47,10 +45,5 @@ public class gameUI : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
-    }
-
-    public void starBurstSteam()
-    {
-        Invoke("playerskill.fireSkillwww", 0f);
     }
 }

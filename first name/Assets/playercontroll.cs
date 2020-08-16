@@ -57,6 +57,7 @@ public class playercontroll : MonoBehaviour
         }
     }
 
+    // isTrigger collide event
     public void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collideObject = collision.gameObject;

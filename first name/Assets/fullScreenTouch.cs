@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class fullScreenTouch : MonoBehaviour
 {
+    // field
     public Rigidbody2D player;
     public GameObject arrow;
     public GameObject arrow1;
