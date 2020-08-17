@@ -1583,7 +1583,7 @@ Transform:
   m_GameObject: {fileID: 1021993799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.52, y: -0.28, z: 0}
-  m_LocalScale: {x: 1.1007423, y: 1.4797993, z: 1}
+  m_LocalScale: {x: 1.1007423, y: 1.159799, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -2677,7 +2677,6 @@ MonoBehaviour:
   deadCanvas: {fileID: 7202268841164189343, guid: 6317747a55129784aada168f75e9eac3,
     type: 3}
   playercontrol: {fileID: 1632707117}
-  slashTime: 16
   burstFace: {fileID: 286829786}
 --- !u!1 &1708810083
 GameObject:
