@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Dynamic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class fullScreenTouch : MonoBehaviour
 {
     // field
     public Rigidbody2D player;
-    public GameObject arrow;
+    public GameObject arrow2;
     public GameObject arrow1;
     public float clickPositionX;
     public float clickPositionY;
@@ -19,13 +21,13 @@ public class fullScreenTouch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        arrow2.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-      
+        arrowMove();
     }
 
     void OnMouseDown() //點擊
@@ -41,8 +43,10 @@ public class fullScreenTouch : MonoBehaviour
         if (player != null) 
         {
             player.velocity = new Vector2((clickPositionX - dragPositionX) / 50, (clickPositionY - dragPositionY) / 50);
-            Destroy(arrow1);
+            //Destroy(arrow1);
             isDrag = true;
+            //print("2c2c");
+            arrow2.SetActive(false);
         }
     }
 
@@ -50,9 +54,17 @@ public class fullScreenTouch : MonoBehaviour
     {
         if (player != null && isDrag == true)
         {
-            arrow1 = (GameObject)Instantiate(arrow, pc.GetPlayerPosition(), new Quaternion(0, 90, 180, 0));
+            //arrow1 = (GameObject)Instantiate(arrow, new Vector3(pc.getPlayerPositionX(), pc.getPlayerPositionY(), 0), new Quaternion(0, 0, 180, 0));
             isDrag = false;
+            //print("FW AD");
+            arrow2.SetActive(true);
         }
     }
-    
+
+    void arrowMove()
+    {
+        var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        arrow2.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
 }

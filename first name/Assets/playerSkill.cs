@@ -16,12 +16,14 @@ public class playerSkill : MonoBehaviour
     public GameObject deadCanvas;
     public playercontroll playercontrol;
     public GameObject burstFace;
+    public GameObject starburstButton;
     bool isSkillFired = false;
 
     // start the game
     void Start()
     {
         burstFace.SetActive(false);
+        starburstButton = GameObject.Find("starBurstStream");
     }
 
     // fire slash
@@ -48,6 +50,7 @@ public class playerSkill : MonoBehaviour
     // onclick event which trigger starBurstStream
     public void starBurstStream()
     {
+        starburstButton.SetActive(false);
         if (isSkillFired == false)
         {
             burstFace.SetActive(true);
