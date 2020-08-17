@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +21,7 @@ public class playerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthbar.setMaxHealth(maxHealth);// set health bar to max hp 
+        healthbar.setMaxHealth(changeScene.playerMaxHealth);// set health bar to max hp 
         immortalObject.SetActive(false);// set immortalObject invisible
         defendButton = GameObject.Find("defendButton");
 
@@ -31,11 +33,11 @@ public class playerHealth : MonoBehaviour
         if (damageflag)
         {
             print("player take damage of " + attackPower);
-            currentHealth -= attackPower;// damage the object
+            changeScene.playerMaxHealth -= attackPower;// damage the object
 
-            if (currentHealth <= 0)
+            if (changeScene.playerMaxHealth <= 0)
             {
-                currentHealth = 0;
+                changeScene.playerMaxHealth = 0;
                 Destroy(gameObject);
                 print("player dead");
 
@@ -50,7 +52,8 @@ public class playerHealth : MonoBehaviour
     // get current hp
     public int getCurrentHp()
     {
-        return currentHealth;
+        //return currentHealth;
+        return changeScene.playerMaxHealth;
     }
 
     // get max hp
