@@ -15,6 +15,7 @@ public class gameUI : MonoBehaviour
     public GameObject startCanvas;
     public playerSkill playerskill;
     public GameObject player;
+    public healthBar healthbar;
 
     // Start is called before the first frame update
     void Start()
@@ -45,5 +46,6 @@ public class gameUI : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+        healthbar.setMaxHealth(5);// set health bar to max hp 
     }
 }

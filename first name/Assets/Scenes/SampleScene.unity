@@ -810,6 +810,7 @@ MonoBehaviour:
   startCanvas: {fileID: 1987670214}
   playerskill: {fileID: 1632707119}
   player: {fileID: 1632707112}
+  healthbar: {fileID: 2066383838}
 --- !u!1 &441154509
 GameObject:
   m_ObjectHideFlags: 0
