@@ -14,25 +14,31 @@ public class playercontroll : MonoBehaviour
     // field
     public Rigidbody2D player;
     public float speed = 0.0001f;
-
     public float speedx, speedy;
     public int attackPower = 1;
     public healthBar bossHealthbar;
     public healthBar playerHealthbar;
+    public playerHealth healthOfPlayer;
+    
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        healthOfPlayer = GetComponent<playerHealth>();// create bossHealth object
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerHealth healthOfPlayer = GetComponent<playerHealth>();
         speedx = player.velocity.x*0.01f;
         speedy = player.velocity.y*0.01f;
-        player.velocity = player.velocity * (1-speed);// to slow down
+        player.velocity = player.velocity * (1-speed);// to slow down 
+        
     }
 
 
@@ -51,10 +57,11 @@ public class playercontroll : MonoBehaviour
         }
     }
 
+    // isTrigger collide event
     public void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject collideObject = collision.gameObject;
-        playerHealth healthOfPlayer = GetComponent<playerHealth>();// create bossHealth object
+        //playerHealth healthOfPlayer = GetComponent<playerHealth>();// create bossHealth object
 
         if (collision.gameObject.tag == "bullet")
         {

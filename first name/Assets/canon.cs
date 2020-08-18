@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class canon : MonoBehaviour
 {
+    // field
     float coorXUp;
     float coorXDown;
     float coorYLeft;
@@ -41,16 +42,6 @@ public class canon : MonoBehaviour
         Destroy(warning, 0.8f);
 
         StartCoroutine(wait(3));
-
-        /*GameObject bullet = (GameObject)Instantiate(
-            bulletHorizontal,
-            new Vector3(5, coorY, 0), new Quaternion(0, 0, 180, 0));
-
-        // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right *6;
-
-        // Destroy the bullet after 2 seconds
-        Destroy(bullet, 2f);*/
     }
 
     // bullet fire form right
@@ -66,16 +57,6 @@ public class canon : MonoBehaviour
         Destroy(warning, 0.8f);
 
         StartCoroutine(wait(1));
-
-        /*GameObject bullet = (GameObject)Instantiate(
-            bulletHorizontal,
-            new Vector3(-3.5f, coorY, 0), new Quaternion(0, 0, 0, 0));
-
-        // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * 6;
-
-        // Destroy the bullet after 2 seconds
-        Destroy(bullet, 2f);*/
     }
 
     // bullet fire form above
@@ -91,18 +72,6 @@ public class canon : MonoBehaviour
         Destroy(warning, 0.8f);
    
         StartCoroutine(wait(0));
-
-        
-           /* GameObject bullet = (GameObject)Instantiate(
-                bulletVertical,
-                new Vector3(coorX, -4.0f, 0), new Quaternion(0, 0, 0, 0));
-
-            // Add velocity to the bullet
-            bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * 6;
-
-            // Destroy the bullet after 2 seconds
-            Destroy(bullet, 1.3f);*/
-        
     }
 
     // bullet fire form below
@@ -118,16 +87,6 @@ public class canon : MonoBehaviour
         Destroy(warning, 0.8f);
 
         StartCoroutine(wait(2));
-
-        /*GameObject bullet = (GameObject)Instantiate(
-            bulletVertical,
-            new Vector3(coorX, 3.5f, 0), new Quaternion(0, 0, 180, 0));
-
-        // Add velocity to the bullet
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * 6;
-
-        // Destroy the bullet after 2 seconds
-        Destroy(bullet, 1.3f);*/
     }
 
     void traceFire()
@@ -175,7 +134,6 @@ public class canon : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             print("destroy player");
-            // Destroy(collideObject);
         }
     }
 
@@ -187,7 +145,6 @@ public class canon : MonoBehaviour
 
     void createObject(int objPos)
     {
-
         switch (objPos)
         {
             case 0:// up

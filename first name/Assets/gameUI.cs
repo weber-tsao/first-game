@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
 
 public class gameUI : MonoBehaviour
 {
-
+    // field
     public GameObject gameTitle; 
     public GameObject gameOverTitle; 
     public GameObject playButton; 
     public bool IsPlaying = false;
     public GameObject startCanvas;
+    public playerSkill playerskill;
+    public GameObject player;
+    public healthBar healthbar;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameTitle.SetActive(true); 
+        gameTitle.SetActive(true);
         gameOverTitle.SetActive(false);
     }
 
@@ -42,5 +46,6 @@ public class gameUI : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+        healthbar.setMaxHealth(5);// set health bar to max hp 
     }
 }

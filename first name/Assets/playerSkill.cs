@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerSkill : MonoBehaviour
 {
+    // field
     public GameObject player;
     int attackPower;
     int currentHealth;
@@ -12,52 +15,78 @@ public class playerSkill : MonoBehaviour
     public GameObject slash;
     public GameObject deadCanvas;
     public playercontroll playercontrol;
+    public GameObject burstFace;
+    public GameObject starburstButton;
+    bool isSkillFired = false;
 
-    // Start is called before the first frame update
+    // start the game
     void Start()
     {
-        //print(player.transform.position.x);
-        fireSkill();
+        burstFace.SetActive(false);
+        starburstButton = GameObject.Find("starBurstStream");
     }
 
-    // Update is called once per frame
-    void Update()
+    // fire slash
+    void slashFire()
     {
-        
-    }
+        int mode = Random.Range(0, 360);
+        float playerPosX = getPositionX();
+        float playerPosY = getPositionY();
 
-    public void attack()
-    {
-        currentHealth = playerhealth.getCurrentHp();
-        print("player take damage of " + attackPower);
-        currentHealth -= attackPower;// damage the object
-
-        if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            Destroy(player);
-            print("player dead");
-
-            // create dead canvas above all layers
-            GameObject dead = (GameObject)Instantiate(
-            deadCanvas,
-            new Vector3(0.55f, -0.17f, 0), new Quaternion(0, 0, 0, 0));
-
-            // pause the game 
-            //Time.timeScale = 0f;
-        }
-    }
-
-    void fireSkill()
-    {
-        float coorX = Random.Range(3.2f, -2.1f);
-        
+        Quaternion rotation = Quaternion.Euler(0, 0, mode);
 
         GameObject playerSkill = (GameObject)Instantiate(
            slash,
-           new Vector3(playercontrol.getPlayerPositionX(), 3.92f, 0), new Quaternion(0, 0, 180, 0));
+           new Vector3(playerPosX, playerPosY, 0), rotation);
 
-        // Add velocity to the bullet
-        playerSkill.GetComponent<Rigidbody2D>().velocity = playerSkill.transform.up * 10;
+        playerSkill.transform.parent = transform;
+
+        // Add velocity to the slash
+        playerSkill.GetComponent<Rigidbody2D>().velocity = playerSkill.transform.up * 5;
+
+        Destroy(playerSkill, 0.2f);
+    }
+
+    // onclick event which trigger starBurstStream
+    public void starBurstStream()
+    {
+        starburstButton.SetActive(false);
+        if (isSkillFired == false)
+        {
+            burstFace.SetActive(true);
+            Invoke("slashFire", 0f);
+            Invoke("slashFire", 0.5f);
+            Invoke("slashFire", 1.0f);
+            Invoke("slashFire", 1.29f);
+            Invoke("slashFire", 1.48f);
+            Invoke("slashFire", 1.65f);
+            Invoke("slashFire", 1.84f);
+            Invoke("slashFire", 2.01f);
+            Invoke("slashFire", 2.25f);
+            Invoke("slashFire", 2.48f);
+            Invoke("slashFire", 2.62f);
+            Invoke("slashFire", 2.75f);
+            Invoke("slashFire", 2.82f);
+            Invoke("slashFire", 2.89f);
+            Invoke("slashFire", 2.95f);
+            Invoke("slashFire", 3.0f);
+            Invoke("faceDisappear", 3.2f);
+            isSkillFired = true;
+        }
+    }
+
+    public float getPositionX()
+    {
+        return playercontrol.getPlayerPositionX();
+    }
+
+    public float getPositionY()
+    {
+        return playercontrol.getPlayerPositionY();
+    }
+
+    void faceDisappear()
+    {
+        burstFace.SetActive(false);
     }
 }

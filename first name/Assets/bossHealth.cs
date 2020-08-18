@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class bossHealth : MonoBehaviour
 {
@@ -33,10 +34,36 @@ public class bossHealth : MonoBehaviour
             // create clear canvas above all layers
             GameObject clear= (GameObject)Instantiate(
             clearCanvas,
-           new Vector3(0.50352f, -0.33f, 0), new Quaternion(0, 0, 0, 0));
+            new Vector3(0.50352f, -0.33f, 0), new Quaternion(0, 0, 0, 0));
+
+            SceneManager.LoadScene("scene2");
+            
+            // pause the game 
+            //Time.timeScale = 0f;
+        }
+    }
+
+    // starBurstStream damage function
+    public void takeDamageFromSlash(int attackPower, GameObject gameObject)
+    {
+        print("boss take damage of " + attackPower);
+        currentHealth -= attackPower;// damage the object
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroy(gameObject);
+            print("boss dead");
+
+            // create clear canvas above all layers
+            GameObject clear = (GameObject)Instantiate(
+            clearCanvas,
+            new Vector3(0.50352f, 1.33f, 0), new Quaternion(0, 0, 0, 0));
+
+            SceneManager.LoadScene("scene2");
 
             // pause the game 
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
         }
     }
 
