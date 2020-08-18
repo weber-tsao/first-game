@@ -14,12 +14,12 @@ public class playercontroll : MonoBehaviour
     // field
     public Rigidbody2D player;
     public float speed = 0.0001f;
-
     public float speedx, speedy;
     public int attackPower = 1;
     public healthBar bossHealthbar;
     public healthBar playerHealthbar;
     public playerHealth healthOfPlayer;
+    
 
 
 

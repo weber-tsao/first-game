@@ -16,12 +16,15 @@ public class playerHealth : MonoBehaviour
     public bool damageflag = true;
     public float timer_f;
     public GameObject immortalObject;
+    public GameObject defendButton;
 
     // Start is called before the first frame update
     void Start()
     {
         healthbar.setMaxHealth(changeScene.playerMaxHealth);// set health bar to max hp 
         immortalObject.SetActive(false);// set immortalObject invisible
+        defendButton = GameObject.Find("defendButton");
+
     }
 
     // damage the object and destroy it when health reached 0
@@ -63,9 +66,11 @@ public class playerHealth : MonoBehaviour
     public void HeathcliffShield()
     {
         damageflag = false;
+        defendButton.SetActive(false);
         Invoke("shieldAppear", 0);
         Invoke("shieldDisappear", 2);
         Invoke("setDamageflag",2);
+        Invoke("defendButtonShow", 5);
     }
 
     public void setDamageflag()
@@ -87,6 +92,9 @@ public class playerHealth : MonoBehaviour
     {
         immortalObject.SetActive(false);
     }
-
+    void defendButtonShow()
+    {
+        defendButton.SetActive(true);
+    }
 }
 
