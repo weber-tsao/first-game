@@ -21,7 +21,7 @@ public class fullScreenTouch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        arrow2.SetActive(true);
+        arrow2.SetActive(false);
     }
 
     // Update is called once per frame
