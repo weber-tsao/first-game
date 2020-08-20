@@ -66,7 +66,7 @@ public class fullScreenTouch : MonoBehaviour
         if (player != null)
         {
             var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            var angle = Mathf.Atan2(-dir.y, -dir.x) * Mathf.Rad2Deg;
             arrow2.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
