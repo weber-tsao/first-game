@@ -10,7 +10,7 @@ public class playerHealth : MonoBehaviour
 {
     // field
     public const int maxHealth = 5;
-    public int currentHealth = maxHealth;
+    public int currentHealth = changeScene.playerMaxHealth;
     public healthBar healthbar;
     public GameObject deadCanvas;
     public bool damageflag = true;
@@ -21,7 +21,7 @@ public class playerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthbar.setMaxHealth(changeScene.playerMaxHealth);// set health bar to max hp 
+        healthbar.setMaxHealth(5);// set health bar to max hp 
         immortalObject.SetActive(false);// set immortalObject invisible
         defendButton = GameObject.Find("defendButton");
 
